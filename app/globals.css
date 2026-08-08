@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces — editorial publication rhythm */
+  --background: #f7f5f2;
+  --foreground: #111111;
+  --surface: #ffffff;
+  --muted: #f7f5f2;
+  --muted-foreground: #4d4d4d;
+  --label: #6f6f6f;
+  --placeholder: #8a8a8a;
+  --inverse: #151515;
+  --inverse-foreground: #ffffff;
+  --inverse-muted: color-mix(in oklab, var(--inverse-foreground) 62%, transparent);
+
+  /* Accent — logo yellow, used sparingly */
+  --accent: #ecec3f;
+  --accent-foreground: #111111;
+
+  /* Borders */
+  --border: #d9d9d9;
+  --border-subtle: #d7d7d7;
+  --border-strong: #a8a8a8;
+  --border-inverse: color-mix(in oklab, var(--inverse-foreground) 16%, transparent);
+
+  /* Media frame surfaces */
+  --media-frame: #ddd9d3;
+  --media-matte: #ebe8e2;
+
+  /* Elevation — one soft family */
+  --shadow-soft: 0 10px 30px -20px rgb(0 0 0 / 0.16);
+  --shadow-float: 0 20px 40px -24px rgb(0 0 0 / 0.14);
+
+  /* Radius — one control language */
+  --radius-control: 0.125rem;
+
+  /* Motion (CSS transitions) — pairs with lib/motion.ts */
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-media: 700ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layout */
+  --container-max: 72rem;
+  --container-px: clamp(1.25rem, 4vw, 2rem);
+  --section-py: clamp(3rem, 5vw, 5rem);
+  --max-width-measure: 34rem;
+  --max-width-statement: 48rem;
+
+  /* Header chrome — sized for a stronger brand mark */
+  --header-height: 4.75rem;
+  --header-height-compact: 4.25rem;
+  --header-height-lg: 5.25rem;
+  --header-height-lg-compact: 4.75rem;
+
+  /* Type */
+  --leading-prose: 1.75;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-label: var(--label);
+  --color-placeholder: var(--placeholder);
+  --color-inverse: var(--inverse);
+  --color-inverse-foreground: var(--inverse-foreground);
+  --color-inverse-muted: var(--inverse-muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-border-inverse: var(--border-inverse);
+  --color-media-frame: var(--media-frame);
+  --color-media-matte: var(--media-matte);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-control: var(--radius-control);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-float: var(--shadow-float);
+
+  --spacing-section: var(--section-py);
+  --spacing-container: var(--container-px);
+
+  --max-width-container: var(--container-max);
+  --max-width-measure: var(--max-width-measure);
+  --max-width-statement: var(--max-width-statement);
+
+  --blur-header: 12px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
