@@ -59,11 +59,6 @@ export function Footer() {
                   {footer.contact.email}
                 </FooterLink>
               </li>
-              <li>
-                <FooterLink href={footer.contact.phoneHref}>
-                  {footer.contact.phone}
-                </FooterLink>
-              </li>
               <li className="pt-2">
                 <FooterLink href={footer.contact.linkedIn.href} external>
                   {footer.contact.linkedIn.label}

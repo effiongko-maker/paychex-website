@@ -21,11 +21,6 @@ export const contactPage = {
         href: `mailto:${siteConfig.footer.contact.email}`,
       },
       {
-        label: "Phone",
-        value: siteConfig.footer.contact.phone,
-        href: siteConfig.footer.contact.phoneHref,
-      },
-      {
         label: "Location",
         value: siteConfig.footer.contact.location,
         href: null as string | null,

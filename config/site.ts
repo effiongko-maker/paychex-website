@@ -31,9 +31,7 @@ export const siteConfig = {
     ],
     contact: {
       location: "Abuja, Nigeria",
-      email: "hello@paychex.ng",
-      phone: "+234 803 377 2923",
-      phoneHref: "tel:+2348033772923",
+      email: "info@paychexng.com",
       linkedIn: {
         label: "LinkedIn",
         href: "https://www.linkedin.com/company/paychex",
