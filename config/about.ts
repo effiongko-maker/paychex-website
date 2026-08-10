@@ -179,15 +179,6 @@ export const aboutThinking = {
   ],
 };
 
-export const aboutCredibility = {
-  facts: [
-    { label: "Since", value: "2008" },
-    { label: "Delivery", value: "Nationwide" },
-    { label: "Clients", value: "Government & Enterprise" },
-    { label: "Approach", value: "Engineering-led" },
-  ],
-};
-
 export const aboutCta = {
   headline: "Let's discuss your next programme.",
   supporting:

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { AboutApproach } from "@/components/sections/about/AboutApproach";
 import { AboutCapabilities } from "@/components/sections/about/AboutCapabilities";
-import { AboutCredibility } from "@/components/sections/about/AboutCredibility";
 import { AboutCta } from "@/components/sections/about/AboutCta";
 import { AboutHero } from "@/components/sections/about/AboutHero";
 import { AboutThinking } from "@/components/sections/about/AboutThinking";
@@ -24,7 +23,6 @@ export default function AboutPage() {
       <AboutCapabilities />
       <AboutValue />
       <AboutThinking />
-      <AboutCredibility />
       <AboutCta />
     </>
   );

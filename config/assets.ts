@@ -29,8 +29,8 @@ export const assets = {
     },
     capabilitiesPage: {
       hero: "/images/capabilities/hero.jpg",
-      /** ATU Conference of Plenipotentiaries — Work project photography only */
-      eventsFeature: "/images/capabilities/events-atu-hall.jpg",
+      /** ATU Conference of Plenipotentiaries — Work / Events portfolio only */
+      eventsFeature: "/images/work/atu/hall.jpg",
       eventsPanel: "/images/capabilities/events-atu-panel.jpg",
       eventsStage: "/images/capabilities/events-atu-stage.jpg",
     },

@@ -11,7 +11,7 @@ import { exhibitionSectionClass } from "@/lib/layout";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected projects across infrastructure, technology, events and public-sector delivery — showing where PayChex has put its capabilities into practice.",
+    "Selected projects across technology, infrastructure, construction, events and institutional delivery.",
 };
 
 /** Exhibition rhythm alternates by delivery area */

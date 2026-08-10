@@ -14,9 +14,8 @@ type WorkAreaSectionProps = {
 };
 
 /**
- * Delivery-area chapter: numbered area header + featured project +
- * additional verified projects. Empty project lists leave room for
- * future evidence without inventing placeholder cards.
+ * Delivery-area chapter: numbered area header + optional evidence framing
+ * + featured and additional verified projects.
  */
 export function WorkAreaSection({
   area,
@@ -27,6 +26,9 @@ export function WorkAreaSection({
   const selected = area.projects.filter((project) => !project.featured);
   const hasProjects = area.projects.length > 0;
   const continuation = area.portfolioContinuation;
+  const showEvidenceFrame = Boolean(
+    area.selectedLabel || area.selectedIntroduction,
+  );
 
   return (
     <div className="flex flex-col gap-14 md:gap-16 lg:gap-20">
@@ -45,13 +47,7 @@ export function WorkAreaSection({
             >
               {String(index + 1).padStart(2, "0")}
             </Text>
-            <span
-              className={cn(
-                "h-px w-5",
-                inverse ? "bg-accent" : "bg-accent",
-              )}
-              aria-hidden
-            />
+            <span className="h-px w-5 bg-accent" aria-hidden />
           </div>
           <Heading
             as="h2"
@@ -77,62 +73,60 @@ export function WorkAreaSection({
         </header>
       </Reveal>
 
-      {featured ? (
-        <WorkEngagement
-          project={featured}
-          inverse={inverse}
-          caption="Featured project"
-        />
+      {showEvidenceFrame && hasProjects ? (
+        <Reveal direction="up" distance={motionTokens.distance.sm}>
+          <div className="flex max-w-2xl flex-col gap-3 md:gap-4">
+            {area.selectedLabel ? (
+              <div className="flex items-center gap-3">
+                <span className="h-px w-5 bg-accent" aria-hidden />
+                <Text
+                  variant="caption"
+                  as="span"
+                  className={cn(
+                    "tracking-[0.14em] uppercase",
+                    inverse
+                      ? "text-inverse-foreground/35"
+                      : "text-muted-foreground/45",
+                  )}
+                >
+                  {area.selectedLabel}
+                </Text>
+              </div>
+            ) : null}
+            {area.selectedIntroduction ? (
+              <Text
+                className={cn(
+                  "max-w-measure text-[15px] leading-[1.7] md:text-base",
+                  inverse
+                    ? "text-inverse-foreground/50"
+                    : "text-muted-foreground",
+                )}
+              >
+                {area.selectedIntroduction}
+              </Text>
+            ) : null}
+          </div>
+        </Reveal>
       ) : null}
 
-      {selected.length > 0 ? (
-        <div className="flex flex-col gap-10 md:gap-12 lg:gap-14">
-          {area.selectedLabel || area.selectedIntroduction ? (
-            <Reveal direction="up" distance={motionTokens.distance.sm}>
-              <div className="flex max-w-2xl flex-col gap-3 md:gap-4">
-                {area.selectedLabel ? (
-                  <div className="flex items-center gap-3">
-                    <span className="h-px w-5 bg-accent" aria-hidden />
-                    <Text
-                      variant="caption"
-                      as="span"
-                      className={cn(
-                        "tracking-[0.14em] uppercase",
-                        inverse
-                          ? "text-inverse-foreground/35"
-                          : "text-muted-foreground/45",
-                      )}
-                    >
-                      {area.selectedLabel}
-                    </Text>
-                  </div>
-                ) : null}
-                {area.selectedIntroduction ? (
-                  <Text
-                    className={cn(
-                      "max-w-measure text-[15px] leading-[1.7] md:text-base",
-                      inverse
-                        ? "text-inverse-foreground/50"
-                        : "text-muted-foreground",
-                    )}
-                  >
-                    {area.selectedIntroduction}
-                  </Text>
-                ) : null}
-              </div>
-            </Reveal>
+      {hasProjects ? (
+        <div className="flex flex-col gap-16 md:gap-20 lg:gap-24">
+          {featured ? (
+            <WorkEngagement
+              project={featured}
+              inverse={inverse}
+              caption="Featured project"
+            />
           ) : null}
 
-          <div className="flex flex-col gap-14 md:gap-16 lg:gap-20">
-            {selected.map((project) => (
-              <WorkEngagement
-                key={project.id}
-                project={project}
-                inverse={inverse}
-                compact
-              />
-            ))}
-          </div>
+          {selected.map((project) => (
+            <WorkEngagement
+              key={project.id}
+              project={project}
+              inverse={inverse}
+              compact
+            />
+          ))}
         </div>
       ) : null}
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import {
   motion,
   useReducedMotion,
@@ -62,6 +63,24 @@ function EngagementImage({
   );
   const contain = fit === "contain";
 
+  if (media.type !== "image") {
+    return (
+      <figure
+        ref={frameRef}
+        className={cn(
+          mediaFrameClassName,
+          "group/media",
+          aspectClassName,
+          inverse && "bg-[#1a1a1a] shadow-none ring-border-inverse",
+        )}
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          <Media source={media} mutedTone="soft" />
+        </div>
+      </figure>
+    );
+  }
+
   return (
     <figure
       ref={frameRef}
@@ -76,19 +95,22 @@ function EngagementImage({
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className={cn(
-            "absolute origin-center will-change-transform",
-            contain ? "inset-0" : cn("inset-[-6%]", mediaHoverClassName),
+            "absolute inset-0 origin-center will-change-transform",
+            !contain && mediaHoverClassName,
           )}
           style={{ y: parallaxY }}
         >
-          <Media
-            source={
-              media.type === "image"
-                ? { ...media, priority: priority || media.priority }
-                : media
-            }
-            mutedTone={contain ? false : "soft"}
-            className={contain ? "object-contain object-center" : undefined}
+          <Image
+            src={media.src}
+            alt={media.alt}
+            fill
+            priority={priority || Boolean(media.priority)}
+            sizes={media.sizes ?? "(max-width: 1024px) 100vw, 48vw"}
+            className={cn(
+              contain
+                ? "object-contain object-center"
+                : "object-cover object-center contrast-[1.03] brightness-[0.97] saturate-[0.92]",
+            )}
           />
         </motion.div>
       </div>

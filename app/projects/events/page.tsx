@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { Reveal } from "@/components/motion/Reveal";
-import { WorkEngagement } from "@/components/sections/work/WorkEngagement";
+import { EventCaseStudy } from "@/components/sections/work/EventCaseStudy";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
@@ -9,11 +9,7 @@ import { Text } from "@/components/ui/Text";
 import { TextLink } from "@/components/ui/TextLink";
 import { eventPortfolioPage } from "@/config/work";
 import { cn } from "@/lib/cn";
-import {
-  beforeFooterClass,
-  exhibitionSectionClass,
-  pageHeroClass,
-} from "@/lib/layout";
+import { beforeFooterClass, pageHeroClass } from "@/lib/layout";
 import { motionTokens } from "@/lib/motion";
 
 export const metadata: Metadata = {
@@ -23,10 +19,10 @@ export const metadata: Metadata = {
 
 /**
  * Events delivery portfolio — linked from Work, not primary navigation.
- * Evidence of institutional event and stakeholder programme delivery.
+ * Editorial case-study archive of institutional event delivery.
  */
 export default function EventPortfolioPage() {
-  const { hero, back, featured, selected, selectedLabel, selectedIntroduction } =
+  const { hero, back, selectedLabel, selectedIntroduction, cases } =
     eventPortfolioPage;
 
   return (
@@ -34,10 +30,10 @@ export default function EventPortfolioPage() {
       <Section
         background="surface"
         padding="none"
-        className={cn(pageHeroClass, "pb-12 md:pb-14 lg:pb-16")}
+        className={cn(pageHeroClass, "pb-10 md:pb-12 lg:pb-14")}
       >
         <Container>
-          <div className="flex max-w-2xl flex-col gap-8 md:gap-10">
+          <div className="flex max-w-2xl flex-col gap-7 md:gap-8">
             <Reveal direction="up" distance={motionTokens.distance.sm}>
               <TextLink
                 href={back.href}
@@ -48,7 +44,7 @@ export default function EventPortfolioPage() {
               </TextLink>
             </Reveal>
 
-            <div className="flex flex-col gap-5 md:gap-6">
+            <div className="flex flex-col gap-4 md:gap-5">
               <Reveal
                 direction="up"
                 distance={motionTokens.distance.sm}
@@ -59,7 +55,7 @@ export default function EventPortfolioPage() {
                   <Text
                     variant="caption"
                     as="span"
-                    className="text-muted-foreground/50"
+                    className="tracking-[0.14em] uppercase text-muted-foreground/50"
                   >
                     {hero.label}
                   </Text>
@@ -71,7 +67,9 @@ export default function EventPortfolioPage() {
                 delay={0.06}
                 duration={motionTokens.duration.slow}
               >
-                <Heading variant="display">{hero.headline}</Heading>
+                <Heading variant="display" className="tracking-tight">
+                  {hero.headline}
+                </Heading>
               </Reveal>
               <Reveal
                 direction="up"
@@ -89,28 +87,14 @@ export default function EventPortfolioPage() {
       </Section>
 
       <Section
-        background="inverse"
-        padding="none"
-        className={exhibitionSectionClass}
-      >
-        <Container>
-          <WorkEngagement
-            project={featured}
-            inverse
-            caption="Featured project"
-          />
-        </Container>
-      </Section>
-
-      <Section
         background="surface"
         padding="none"
-        className={cn(exhibitionSectionClass, beforeFooterClass)}
+        className={cn("pt-2 md:pt-4", beforeFooterClass)}
       >
         <Container>
-          <div className="flex flex-col gap-14 md:gap-16 lg:gap-20">
+          <div className="flex flex-col gap-10 md:gap-12 lg:gap-14">
             <Reveal direction="up" distance={motionTokens.distance.sm}>
-              <div className="flex max-w-2xl flex-col gap-3 md:gap-4">
+              <div className="flex max-w-2xl flex-col gap-2.5 border-t border-border-subtle pt-8 md:gap-3 md:pt-10">
                 <div className="flex items-center gap-3">
                   <span className="h-px w-5 bg-accent" aria-hidden />
                   <Text
@@ -121,15 +105,23 @@ export default function EventPortfolioPage() {
                     {selectedLabel}
                   </Text>
                 </div>
-                <Text className="max-w-measure text-[15px] leading-[1.7] text-muted-foreground md:text-base">
+                <Text className="max-w-measure text-[15px] leading-[1.7] text-muted-foreground">
                   {selectedIntroduction}
                 </Text>
               </div>
             </Reveal>
 
-            <div className="flex flex-col gap-14 md:gap-16 lg:gap-20">
-              {selected.map((project) => (
-                <WorkEngagement key={project.id} project={project} compact />
+            <div className="flex flex-col">
+              {cases.map((study, index) => (
+                <div
+                  key={study.id}
+                  className={cn(
+                    index > 0 &&
+                      "mt-12 border-t border-border-subtle pt-12 md:mt-14 md:pt-14 lg:mt-16 lg:pt-16",
+                  )}
+                >
+                  <EventCaseStudy study={study} />
+                </div>
               ))}
             </div>
           </div>
