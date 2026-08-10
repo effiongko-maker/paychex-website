@@ -5,30 +5,42 @@ import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { aboutCapabilities } from "@/config/about";
 import { cn } from "@/lib/cn";
-import { chapterSectionClass } from "@/lib/layout";
 import { motionTokens } from "@/lib/motion";
 
+/**
+ * About — specialist capability pillars.
+ *
+ * Explicit padding only (`padding="none"`) — never combine with
+ * `py-section` / `chapterSectionClass`, which fight in the cascade
+ * and collapse sticky-header clearance.
+ */
 export function AboutCapabilities() {
   return (
-    <Section background="muted" className={chapterSectionClass}>
+    <Section
+      id="specialist-capability"
+      background="muted"
+      padding="none"
+      className={cn(
+        "scroll-mt-[var(--header-height-lg)]",
+        // Top: clear sticky header. Bottom: modest step into the next section.
+        "pt-[calc(var(--header-height-lg)+1.5rem)] pb-8",
+        "md:pt-[calc(var(--header-height-lg-compact)+1.75rem)] md:pb-9",
+        "lg:pb-10",
+      )}
+    >
       <Container className="max-w-[90rem]">
-        <div className="flex flex-col gap-16 md:gap-20 lg:gap-24">
-          <Reveal
-            direction="up"
-            distance={motionTokens.distance.sm}
-            className="w-full max-w-statement"
-          >
-            <div className="flex flex-col gap-5 md:gap-6">
-              <Heading variant="h1" className="font-medium">
-                {aboutCapabilities.headline}
-              </Heading>
-              <Heading variant="lead" className="max-w-measure">
-                {aboutCapabilities.supporting}
-              </Heading>
-            </div>
-          </Reveal>
+        {/* One composition: heading → lede → columns */}
+        <div className="flex flex-col gap-5 md:gap-6 lg:gap-6">
+          <header className="flex w-full max-w-statement flex-col gap-3 md:gap-3.5">
+            <Heading variant="h1" className="font-medium">
+              {aboutCapabilities.headline}
+            </Heading>
+            <Heading variant="lead" className="max-w-measure">
+              {aboutCapabilities.supporting}
+            </Heading>
+          </header>
 
-          <ul className="grid list-none grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-14 xl:grid-cols-5 xl:gap-0">
+          <ul className="grid list-none grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-12 xl:grid-cols-5 xl:gap-0">
             {aboutCapabilities.pillars.map((pillar, index) => (
               <li
                 key={pillar.title}
@@ -42,7 +54,7 @@ export function AboutCapabilities() {
                   direction="up"
                   distance={motionTokens.distance.sm}
                   delay={index * 0.05}
-                  className="flex h-full min-w-0 flex-col gap-4 md:gap-5"
+                  className="flex min-w-0 flex-col gap-3.5 md:gap-4"
                 >
                   <Text
                     variant="caption"

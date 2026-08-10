@@ -4,7 +4,6 @@ import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { aboutValue } from "@/config/about";
-import { chapterSectionClass } from "@/lib/layout";
 import { motionTokens } from "@/lib/motion";
 
 type ValueIcon = (typeof aboutValue.areas)[number]["icon"];
@@ -104,15 +103,19 @@ function DomainIcon({ icon }: { icon: ValueIcon }) {
 
 export function AboutValue() {
   return (
-    <Section background="surface" className={chapterSectionClass}>
+    <Section
+      background="surface"
+      padding="none"
+      className="pt-12 pb-16 md:pt-14 md:pb-20 lg:pt-16 lg:pb-24"
+    >
       <Container>
-        <div className="flex flex-col gap-14 md:gap-16">
+        <div className="flex flex-col gap-10 md:gap-12">
           <Reveal
             direction="up"
             distance={motionTokens.distance.sm}
             className="w-full max-w-statement"
           >
-            <div className="flex flex-col gap-5 md:gap-6">
+            <div className="flex flex-col gap-4 md:gap-5">
               <Heading variant="h1" className="font-medium">
                 {aboutValue.headline}
               </Heading>
@@ -122,7 +125,7 @@ export function AboutValue() {
             </div>
           </Reveal>
 
-          <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-12 border-t border-border pt-10 sm:grid-cols-2 md:gap-y-14 lg:grid-cols-4 lg:gap-x-8 lg:pt-12">
+          <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-12 border-t border-border pt-8 sm:grid-cols-2 md:gap-y-14 lg:grid-cols-4 lg:gap-x-8 lg:pt-10">
             {aboutValue.areas.map((area, index) => (
               <Reveal
                 key={area.title}

@@ -68,7 +68,7 @@ export const aboutCapabilities = {
     "Five areas of expertise. Each stands on its own. Together they show the range of work we take on.",
   pillars: [
     {
-      title: "IT & Telecommunications",
+      title: "IT & Telecoms",
       description:
         "Technology, connectivity and digital infrastructure institutions can depend on.",
     },

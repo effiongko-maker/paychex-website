@@ -101,6 +101,10 @@ body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
+html {
+  scroll-padding-top: var(--header-height-lg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
