@@ -19,9 +19,9 @@ export const pageHeroClass =
 export const compactSectionClass =
   "pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-24 lg:pb-24";
 
-/** Exhibition / featured-work chapters */
+/** Exhibition / featured-work chapters — tighter editorial rhythm */
 export const exhibitionSectionClass =
-  "py-28 md:py-32 lg:py-40";
+  "py-16 md:py-20 lg:py-24";
 
 /** Extra breathing room before footer on closing sections */
 export const beforeFooterClass =

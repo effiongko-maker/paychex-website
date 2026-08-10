@@ -15,25 +15,27 @@ type WorkAreaSectionProps = {
 
 /**
  * Delivery-area chapter: numbered area header + optional evidence framing
- * + featured and additional verified projects.
+ * + continuous portfolio sequence of verified projects.
  */
 export function WorkAreaSection({
   area,
   index,
   inverse = false,
 }: WorkAreaSectionProps) {
-  const featured = area.projects.find((project) => project.featured);
-  const selected = area.projects.filter((project) => !project.featured);
-  const hasProjects = area.projects.length > 0;
+  const projects = area.projects;
+  const featured = projects.find((project) => project.featured);
+  const secondary = projects.filter((project) => !project.featured);
+  const hasProjects = projects.length > 0;
   const continuation = area.portfolioContinuation;
-  const showEvidenceFrame = Boolean(
+  const showEvidenceIntro = Boolean(
     area.selectedLabel || area.selectedIntroduction,
   );
+  const secondaryGrid = area.secondaryLayout === "grid";
 
   return (
-    <div className="flex flex-col gap-14 md:gap-16 lg:gap-20">
+    <div className="flex flex-col gap-6 md:gap-7 lg:gap-8">
       <Reveal direction="up" distance={motionTokens.distance.sm}>
-        <header className="flex max-w-2xl flex-col gap-4 md:gap-5">
+        <header className="flex max-w-2xl flex-col gap-3 md:gap-3.5">
           <div className="flex items-center gap-3">
             <Text
               variant="caption"
@@ -70,71 +72,109 @@ export function WorkAreaSection({
           >
             {area.introduction}
           </Heading>
+
+          {showEvidenceIntro && hasProjects ? (
+            <div className="flex max-w-2xl flex-col gap-3 pt-1 md:gap-3.5">
+              {area.selectedLabel ? (
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-5 bg-accent" aria-hidden />
+                  <Text
+                    variant="caption"
+                    as="span"
+                    className={cn(
+                      "tracking-[0.14em] uppercase",
+                      inverse
+                        ? "text-inverse-foreground/35"
+                        : "text-muted-foreground/45",
+                    )}
+                  >
+                    {area.selectedLabel}
+                  </Text>
+                </div>
+              ) : null}
+              {area.selectedIntroduction ? (
+                <Text
+                  className={cn(
+                    "max-w-measure text-[15px] leading-[1.7] md:text-base",
+                    inverse
+                      ? "text-inverse-foreground/50"
+                      : "text-muted-foreground",
+                  )}
+                >
+                  {area.selectedIntroduction}
+                </Text>
+              ) : null}
+            </div>
+          ) : null}
         </header>
       </Reveal>
 
-      {showEvidenceFrame && hasProjects ? (
-        <Reveal direction="up" distance={motionTokens.distance.sm}>
-          <div className="flex max-w-2xl flex-col gap-3 md:gap-4">
-            {area.selectedLabel ? (
-              <div className="flex items-center gap-3">
-                <span className="h-px w-5 bg-accent" aria-hidden />
-                <Text
-                  variant="caption"
-                  as="span"
-                  className={cn(
-                    "tracking-[0.14em] uppercase",
-                    inverse
-                      ? "text-inverse-foreground/35"
-                      : "text-muted-foreground/45",
-                  )}
-                >
-                  {area.selectedLabel}
-                </Text>
+      {hasProjects ? (
+        secondaryGrid ? (
+          <div className="flex flex-col gap-8 md:gap-10 lg:gap-12">
+            {featured ? (
+              <WorkEngagement
+                project={featured}
+                inverse={inverse}
+                caption="Featured project"
+              />
+            ) : null}
+
+            {secondary.length > 0 ? (
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-8 lg:gap-10">
+                {secondary.map((project) => (
+                  <WorkEngagement
+                    key={project.id}
+                    project={project}
+                    inverse={inverse}
+                    layout="supporting"
+                  />
+                ))}
               </div>
             ) : null}
-            {area.selectedIntroduction ? (
-              <Text
-                className={cn(
-                  "max-w-measure text-[15px] leading-[1.7] md:text-base",
-                  inverse
-                    ? "text-inverse-foreground/50"
-                    : "text-muted-foreground",
-                )}
-              >
-                {area.selectedIntroduction}
-              </Text>
-            ) : null}
           </div>
-        </Reveal>
-      ) : null}
+        ) : (
+          <div className="flex flex-col">
+            {projects.map((project, i) => {
+              const previous = i > 0 ? projects[i - 1] : undefined;
+              const textLed = !project.media;
+              const previousTextLed = Boolean(previous && !previous.media);
 
-      {hasProjects ? (
-        <div className="flex flex-col gap-16 md:gap-20 lg:gap-24">
-          {featured ? (
-            <WorkEngagement
-              project={featured}
-              inverse={inverse}
-              caption="Featured project"
-            />
-          ) : null}
+              /**
+               * Content-driven gaps:
+               * - after a text-led entry → small/normal gap (pull next project up)
+               * - onto a text-led entry → moderate gap
+               * - image → image → standard editorial gap
+               */
+              const topGap =
+                i === 0
+                  ? undefined
+                  : previousTextLed
+                    ? "mt-5 md:mt-6"
+                    : textLed
+                      ? "mt-7 md:mt-8"
+                      : "mt-8 md:mt-10 lg:mt-12";
 
-          {selected.map((project) => (
-            <WorkEngagement
-              key={project.id}
-              project={project}
-              inverse={inverse}
-              compact
-            />
-          ))}
-        </div>
+              return (
+                <WorkEngagement
+                  key={project.id}
+                  project={project}
+                  inverse={inverse}
+                  caption={project.featured ? "Featured project" : undefined}
+                  compact={!project.featured}
+                  className={topGap}
+                />
+              );
+            })}
+          </div>
+        )
       ) : null}
 
       {continuation ? (
         <Reveal direction="up" distance={motionTokens.distance.sm}>
           <div
             className={cn(
-              "flex max-w-xl flex-col gap-4 border-t pt-10 md:gap-5 md:pt-12",
+              "flex max-w-xl flex-col gap-3 border-t pt-8 md:gap-4 md:pt-10",
               inverse ? "border-border-inverse" : "border-border-subtle",
             )}
           >

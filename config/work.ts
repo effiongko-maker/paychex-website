@@ -42,10 +42,18 @@ export type WorkArea = {
   id: string;
   title: string;
   introduction: string;
-  /** Optional label above additional (non-featured) projects */
+  /**
+   * Optional quiet label above evidence framing (rarely used).
+   * Prefer letting area headings and project titles establish hierarchy.
+   */
   selectedLabel?: string;
-  /** Supporting line under the selected-projects label */
+  /** Optional supporting line before projects (prose, not a structural label) */
   selectedIntroduction?: string;
+  /**
+   * How non-featured projects are arranged.
+   * `grid` = supporting pair beside featured case study (IT section).
+   */
+  secondaryLayout?: "stack" | "grid";
   /** Restrained link to a deeper portfolio (e.g. Events) */
   portfolioContinuation?: WorkAreaContinuation;
   projects: readonly WorkProject[];
@@ -352,9 +360,9 @@ export const workPage = {
       title: "IT & Telecommunications",
       introduction:
         "Selected technology, connectivity and digital identity programmes PayChex has delivered.",
-      selectedLabel: "National Connectivity Programmes",
       selectedIntroduction:
         "Documented delivery across broadband infrastructure, campus connectivity and institutional communications systems.",
+      secondaryLayout: "grid",
       projects: [
         {
           id: "identity",
@@ -380,27 +388,6 @@ export const workPage = {
           gallery: null,
         },
         {
-          id: "broadband-campus",
-          title: "Broadband Infrastructure & Campus Connectivity",
-          location: "NCC / USPF",
-          body: "Broadband infrastructure deployed across tertiary institutions for NCC and USPF, including multi-state connectivity projects and campus networks coordinated across institutions and geographic zones.",
-          delivered: [
-            "Broadband infrastructure deployment across tertiary institutions",
-            "Multi-state connectivity project execution",
-            "Campus connectivity network implementation",
-            "Coordination across institutions and geographic zones",
-            "Institutional and regulatory coordination",
-          ],
-          imageSide: "left" as const,
-          media: {
-            type: "image" as const,
-            src: assets.images.home.catalogue.ict,
-            alt: "Field deployment of telecommunications cabling and broadband infrastructure materials",
-            sizes: "(max-width: 1024px) 100vw, 48vw",
-          } satisfies MediaSource,
-          gallery: null,
-        },
-        {
           id: "emergency-communications",
           title: "Emergency Communications Centre Support",
           location: "NCC",
@@ -421,6 +408,27 @@ export const workPage = {
           } satisfies MediaSource,
           gallery: null,
         },
+        {
+          id: "broadband-campus",
+          title: "Broadband Infrastructure & Campus Connectivity",
+          location: "NCC / USPF",
+          body: "Broadband infrastructure deployed across tertiary institutions for NCC and USPF, including multi-state connectivity projects and campus networks coordinated across institutions and geographic zones.",
+          delivered: [
+            "Broadband infrastructure deployment across tertiary institutions",
+            "Multi-state connectivity project execution",
+            "Campus connectivity network implementation",
+            "Coordination across institutions and geographic zones",
+            "Institutional and regulatory coordination",
+          ],
+          imageSide: "left" as const,
+          media: {
+            type: "image" as const,
+            src: assets.images.home.catalogue.ict,
+            alt: "Field deployment of telecommunications cabling and broadband infrastructure materials",
+            sizes: "(max-width: 1024px) 100vw, 48vw",
+          } satisfies MediaSource,
+          gallery: null,
+        },
       ],
     },
     {
@@ -428,7 +436,6 @@ export const workPage = {
       title: "Facility Management",
       introduction:
         "Selected facility operations and site support engagements.",
-      selectedLabel: "Selected engagements",
       projects: [
         {
           id: "ncc-facility-management",
@@ -460,7 +467,6 @@ export const workPage = {
       title: "Construction & Design",
       introduction:
         "Selected construction, fit-out and facilities delivery.",
-      selectedLabel: "Selected projects",
       projects: [
         {
           id: "digital-parks",
@@ -485,6 +491,22 @@ export const workPage = {
           gallery: null,
         },
         {
+          id: "infrastructure-fitout-power",
+          title: "Infrastructure, Fit-Out & Power Works",
+          location: "NCC / FMCIDE",
+          body: "Selected institutional infrastructure engagements delivered as distinct projects — including NITT office furnishing in Maiduguri, solar solutions, generator supply and commissioning, and digital infrastructure upgrade works.",
+          delivered: [
+            "Furnishing and interior fit-out of the constructed NITT office, Maiduguri",
+            "Supply and commissioning support for a 100KVA generator, Ibadan",
+            "Solar solutions delivery for FMCIDE, Abuja",
+            "Digital infrastructure upgrade works for FMCIDE, Abuja",
+            "Furniture and equipment supply, installation and commissioning across NCC locations",
+          ],
+          imageSide: "right" as const,
+          media: null as MediaSource | null,
+          gallery: null,
+        },
+        {
           id: "innovation-park-maiduguri",
           title: "Innovation Park Maiduguri",
           location: "Maiduguri",
@@ -504,22 +526,6 @@ export const workPage = {
           } satisfies MediaSource,
           gallery: null,
         },
-        {
-          id: "infrastructure-fitout-power",
-          title: "Infrastructure, Fit-Out & Power Works",
-          location: "NCC / FMCIDE",
-          body: "Selected institutional infrastructure engagements delivered as distinct projects — including NITT office furnishing in Maiduguri, solar solutions, generator supply and commissioning, and digital infrastructure upgrade works.",
-          delivered: [
-            "Furnishing and interior fit-out of the constructed NITT office, Maiduguri",
-            "Supply and commissioning support for a 100KVA generator, Ibadan",
-            "Solar solutions delivery for FMCIDE, Abuja",
-            "Digital infrastructure upgrade works for FMCIDE, Abuja",
-            "Furniture and equipment supply, installation and commissioning across NCC locations",
-          ],
-          imageSide: "left" as const,
-          media: null as MediaSource | null,
-          gallery: null,
-        },
       ],
     },
     {
@@ -527,7 +533,6 @@ export const workPage = {
       title: "Consulting & Professional Services",
       introduction:
         "Selected advisory, training and professional services engagements.",
-      selectedLabel: "Selected engagements",
       projects: [
         {
           id: "digital-skills",

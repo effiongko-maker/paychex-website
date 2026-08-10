@@ -55,7 +55,7 @@ export default function WorkPage() {
             </Container>
 
             {isLast ? (
-              <div className="pt-[7.5rem] md:pt-36 lg:pt-40" aria-hidden>
+              <div className="pt-8 md:pt-10 lg:pt-12" aria-hidden>
                 <Container>
                   <div
                     className={cn(
@@ -64,7 +64,7 @@ export default function WorkPage() {
                     )}
                   />
                 </Container>
-                <div className="h-16 md:h-20 lg:h-24" />
+                <div className="h-10 md:h-12 lg:h-14" />
               </div>
             ) : null}
           </Section>
