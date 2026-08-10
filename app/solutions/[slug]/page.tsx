@@ -53,6 +53,13 @@ export default async function CapabilityDetailPage({ params }: PageProps) {
         className="pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-36 lg:pb-24"
       >
         <Container>
+          <TextLink
+            href="/solutions"
+            arrow={false}
+            className="mb-8 text-muted-foreground md:mb-10"
+          >
+            ← Back to Capabilities
+          </TextLink>
           <div className="grid items-end gap-12 lg:grid-cols-12 lg:gap-14">
             <Reveal
               direction="up"
