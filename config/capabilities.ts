@@ -13,15 +13,18 @@ export const capabilitiesHub = {
       emphasis: "Disciplined execution.",
     },
     supporting:
-      "Technology, infrastructure, operations and people — the disciplines PayChex brings to complex programme delivery.",
+      "From technology and infrastructure to facilities, professional services and major events — the expertise PayChex brings to complex programme delivery.",
     media: {
       alt: "Multidisciplinary programme execution across engineering, technology and field operations",
     },
   },
   categories: {
-    headline: "Four disciplines.",
+    headline: {
+      lead: "Five areas of expertise.",
+      emphasis: "One integrated partner.",
+    },
     supporting:
-      "Engage one capability or several. Ownership stays the same.",
+      "PayChex brings specialist capabilities together to deliver complex programmes across technology, infrastructure, facilities, professional services and institutional engagements.",
   },
   cta: {
     headline: {
@@ -29,7 +32,9 @@ export const capabilitiesHub = {
       emphasis: "When it matters most.",
     },
     supporting:
-      "One specialist discipline or several working together — we assemble what the programme requires.",
+      "One specialist capability or several working together — with one team accountable for delivery.",
+    example:
+      "For programmes that require technology, facilities, logistics, procurement and stakeholder management, PayChex can bring the right capabilities together under one delivery structure.",
     primary: {
       label: "Discuss your project",
       href: "/contact",
@@ -52,15 +57,17 @@ export type CapabilityFamily = {
   title: string;
   introduction: string;
   items: readonly CapabilityItem[];
+  /** Card grid (default) or compact editorial list — Events uses list for balance */
+  itemLayout?: "cards" | "list";
 };
 
 /** Overview catalogue — concise cards only. Detail lives on slug pages. */
 export const capabilityFamilies: readonly CapabilityFamily[] = [
   {
-    id: "technology",
-    title: "Technology",
+    id: "it-telecommunications",
+    title: "IT & Telecommunications",
     introduction:
-      "Systems institutions can depend on — planned, deployed and supported.",
+      "Technology, connectivity and digital infrastructure that keep organisations connected and operating.",
     items: [
       {
         title: "Software & Platforms",
@@ -83,10 +90,36 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
     ],
   },
   {
-    id: "infrastructure",
-    title: "Infrastructure",
+    id: "facility-management",
+    title: "Facility Management",
     introduction:
-      "Physical environments delivered with engineering discipline.",
+      "Reliable management of the physical environments organisations depend on every day.",
+    items: [
+      {
+        title: "Facility Operations",
+        description:
+          "Day-to-day management of institutional facilities so environments stay usable, controlled and ready for the work they support.",
+        href: "/solutions/construction",
+      },
+      {
+        title: "Building & Technical Maintenance",
+        description:
+          "Maintenance and technical upkeep that protect the condition and continuity of physical environments.",
+        href: "/solutions/construction",
+      },
+      {
+        title: "Site Support",
+        description:
+          "Warehousing, transport and field logistics across people, materials and sites.",
+        href: "/solutions/logistics",
+      },
+    ],
+  },
+  {
+    id: "construction-design",
+    title: "Construction & Design",
+    introduction:
+      "From design and planning through construction, renovation and delivery.",
     items: [
       {
         title: "Engineering & Construction",
@@ -109,10 +142,10 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
     ],
   },
   {
-    id: "operations",
-    title: "Operations",
+    id: "consulting-professional",
+    title: "Consulting & Professional Services",
     introduction:
-      "The machinery that keeps programmes moving.",
+      "Helping organisations improve how they work, make better decisions and execute more effectively.",
     items: [
       {
         title: "Procurement",
@@ -121,13 +154,13 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
         href: "/solutions/procurement",
       },
       {
-        title: "Logistics",
+        title: "Training & Capacity Development",
         description:
-          "Warehousing, transport and field logistics across people, materials and sites.",
-        href: "/solutions/logistics",
+          "Practical learning that leaves teams able to sustain results.",
+        href: "/solutions/training",
       },
       {
-        title: "Managed Operations",
+        title: "Managed Services / BPO",
         description:
           "Contact centres, data capture and back-office capacity to institutional standards.",
         href: "/solutions/bpo",
@@ -135,21 +168,46 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
     ],
   },
   {
-    id: "people",
-    title: "People & Delivery",
+    id: "events-conference",
+    title: "Events & Conference Management",
     introduction:
-      "Capability that continues after implementation.",
+      "Designing and delivering high-level events, conferences and institutional programmes.",
+    itemLayout: "list",
     items: [
       {
-        title: "Training & Capacity Development",
+        title: "Conference Management",
         description:
-          "Practical learning that leaves teams able to sustain results.",
-        href: "/solutions/training",
+          "Conferences and summits delivered end-to-end to institutional standards.",
+        href: "/solutions/events",
       },
       {
-        title: "Events & Stakeholder Engagement",
+        title: "Event Design & Production",
         description:
-          "Conferences, summits and engagement delivered to institutional standards.",
+          "Concept, agenda and production planned for credibility on the day.",
+        href: "/solutions/events",
+      },
+      {
+        title: "Delegate Management & Accreditation",
+        description:
+          "Registration, access and delegate handling for high-stakes institutional gatherings.",
+        href: "/solutions/events",
+      },
+      {
+        title: "Stakeholder Coordination",
+        description:
+          "Stakeholder engagement planned and managed alongside event delivery.",
+        href: "/solutions/events",
+      },
+      {
+        title: "Event Logistics & Technical Support",
+        description:
+          "Venue, movement, production and technical support sequenced to the programme brief.",
+        href: "/solutions/events",
+      },
+      {
+        title: "Turnkey Programme Delivery",
+        description:
+          "Concept through close-out under one accountable delivery structure.",
         href: "/solutions/events",
       },
     ],

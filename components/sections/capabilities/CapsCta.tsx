@@ -5,6 +5,7 @@ import { buttonVariants } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
+import { Text } from "@/components/ui/Text";
 import { TextLink } from "@/components/ui/TextLink";
 import { capabilitiesHub } from "@/config/capabilities";
 import { cn } from "@/lib/cn";
@@ -32,6 +33,9 @@ export function CapsCta() {
               <Heading variant="lead" className="max-w-measure">
                 {cta.supporting}
               </Heading>
+              <Text className="max-w-measure text-base leading-[1.7] text-muted-foreground/75">
+                {cta.example}
+              </Text>
             </div>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link

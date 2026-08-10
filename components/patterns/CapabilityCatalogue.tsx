@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import { Heading } from "@/components/ui/Heading";
@@ -10,6 +11,7 @@ import { cn } from "@/lib/cn";
 export type CatalogueCapability = {
   title: string;
   description: string;
+  href?: string;
   image: {
     src: string;
     alt: string;
@@ -17,7 +19,7 @@ export type CatalogueCapability = {
 };
 
 type CapabilityCatalogueProps = {
-  label: string;
+  label?: string;
   items: readonly CatalogueCapability[];
   className?: string;
 };
@@ -27,7 +29,7 @@ function formatIndex(index: number) {
 }
 
 /**
- * Interactive editorial directory — three-column catalogue + sticky media panel.
+ * Interactive editorial directory — capability list + sticky media panel.
  */
 export function CapabilityCatalogue({
   label,
@@ -39,73 +41,99 @@ export function CapabilityCatalogue({
 
   return (
     <div className={cn("flex flex-col", className)}>
-      <div className="flex flex-col gap-8 border-b border-foreground/15 pb-8 md:gap-10 md:pb-10">
-        <Text variant="eyebrow" as="p">
-          {label}
-        </Text>
-      </div>
+      {label ? (
+        <div className="flex flex-col gap-8 border-b border-foreground/15 pb-8 md:gap-10 md:pb-10">
+          <Text variant="eyebrow" as="p">
+            {label}
+          </Text>
+        </div>
+      ) : null}
 
-      <div className="grid items-start gap-12 pt-12 md:gap-14 md:pt-14 lg:grid-cols-12 lg:gap-16 lg:pt-16">
-        <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 md:gap-y-14 lg:col-span-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+      <div
+        className={cn(
+          "grid items-start gap-12 md:gap-14 lg:grid-cols-12 lg:gap-16",
+          label ? "pt-12 md:pt-14 lg:pt-16" : "pt-0",
+        )}
+      >
+        <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 md:gap-y-14 lg:col-span-6 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
           {items.map((item, index) => {
             const isActive = index === activeIndex;
+            const content = (
+              <>
+                <Text
+                  variant="caption"
+                  as="span"
+                  className={cn(
+                    "transition-colors duration-[320ms] ease-(--ease-out)",
+                    isActive ? "text-accent" : "text-muted-foreground/55",
+                  )}
+                >
+                  {formatIndex(index)}
+                </Text>
+
+                <div className="flex w-full flex-col gap-3">
+                  <Heading
+                    as="span"
+                    variant="h4"
+                    className={cn(
+                      "font-medium transition-colors duration-[320ms] ease-(--ease-out)",
+                      isActive ? "text-accent" : "text-foreground",
+                    )}
+                  >
+                    {item.title}
+                  </Heading>
+
+                  <span
+                    className={cn(
+                      "h-px w-full origin-left bg-accent transition-transform duration-[320ms] ease-(--ease-out)",
+                      isActive ? "scale-x-100" : "scale-x-0",
+                    )}
+                    aria-hidden="true"
+                  />
+
+                  <Text
+                    variant="muted"
+                    className={cn(
+                      "max-w-measure text-sm leading-[1.75] transition-colors duration-[320ms] ease-(--ease-out)",
+                      isActive
+                        ? "text-foreground/85"
+                        : "text-muted-foreground",
+                    )}
+                  >
+                    {item.description}
+                  </Text>
+                </div>
+              </>
+            );
 
             return (
               <li key={item.title}>
-                <button
-                  type="button"
-                  className={cn(
-                    "group flex w-full flex-col items-start gap-3 text-left",
-                    "rounded-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground",
-                  )}
-                  onMouseEnter={() => setActiveIndex(index)}
-                  onFocus={() => setActiveIndex(index)}
-                  aria-pressed={isActive}
-                >
-                  <Text
-                    variant="caption"
-                    as="span"
+                {item.href ? (
+                  <Link
+                    href={item.href}
                     className={cn(
-                      "transition-colors duration-[320ms] ease-(--ease-out)",
-                      isActive ? "text-accent" : "text-muted-foreground/55",
+                      "group flex w-full flex-col items-start gap-3 text-left",
+                      "rounded-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground",
                     )}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    onFocus={() => setActiveIndex(index)}
                   >
-                    {formatIndex(index)}
-                  </Text>
-
-                  <div className="flex w-full flex-col gap-3">
-                    <Heading
-                      as="span"
-                      variant="h4"
-                      className={cn(
-                        "font-medium transition-colors duration-[320ms] ease-(--ease-out)",
-                        isActive ? "text-accent" : "text-foreground",
-                      )}
-                    >
-                      {item.title}
-                    </Heading>
-
-                    <span
-                      className={cn(
-                        "h-px w-full origin-left bg-accent transition-transform duration-[320ms] ease-(--ease-out)",
-                        isActive ? "scale-x-100" : "scale-x-0",
-                      )}
-                      aria-hidden="true"
-                    />
-
-                    <Text
-                      variant="muted"
-                      className={cn(
-                        "max-w-measure text-sm leading-[1.75] transition-colors duration-[320ms] ease-(--ease-out)",
-                        isActive
-                          ? "text-foreground/85"
-                          : "text-muted-foreground",
-                      )}
-                    >
-                      {item.description}
-                    </Text>
-                  </div>
-                </button>
+                    {content}
+                  </Link>
+                ) : (
+                  <button
+                    type="button"
+                    className={cn(
+                      "group flex w-full flex-col items-start gap-3 text-left",
+                      "rounded-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground",
+                    )}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    onFocus={() => setActiveIndex(index)}
+                    aria-pressed={isActive}
+                  >
+                    {content}
+                  </button>
+                )}
               </li>
             );
           })}

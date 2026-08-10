@@ -27,7 +27,7 @@ export function AboutCapabilities() {
             </div>
           </Reveal>
 
-          <ul className="grid list-none grid-cols-1 gap-px overflow-hidden bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid list-none grid-cols-1 gap-px overflow-hidden bg-border sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {aboutCapabilities.pillars.map((pillar, index) => (
               <Reveal
                 key={pillar.title}

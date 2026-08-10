@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { CapabilityCatalogue } from "@/components/patterns/CapabilityCatalogue";
-import { CapabilityStory } from "@/components/patterns/CapabilityStory";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
@@ -12,7 +11,7 @@ export function HomeCapabilities() {
   return (
     <Section background="surface" className={chapterSectionClass}>
       <Container>
-        <div className="flex flex-col gap-16 md:gap-20">
+        <div className="flex flex-col gap-14 md:gap-16">
           <Reveal
             direction="up"
             distance={motionTokens.distance.sm}
@@ -28,20 +27,13 @@ export function HomeCapabilities() {
             </div>
           </Reveal>
 
-          <div className="flex flex-col">
-            <div className="flex flex-col gap-24 md:gap-28 lg:gap-32">
-              {homeCapabilities.stories.map((story) => (
-                <CapabilityStory key={story.title} story={story} />
-              ))}
-            </div>
-
-            <div className="mt-14 md:mt-16 lg:mt-20">
-              <CapabilityCatalogue
-                label={homeCapabilities.catalogueLabel}
-                items={homeCapabilities.catalogue}
-              />
-            </div>
-          </div>
+          <Reveal
+            direction="up"
+            distance={motionTokens.distance.sm}
+            delay={0.06}
+          >
+            <CapabilityCatalogue items={homeCapabilities.catalogue} />
+          </Reveal>
         </div>
       </Container>
     </Section>

@@ -22,11 +22,17 @@ export function EditorialPillars({
   tone = "default",
 }: EditorialPillarsProps) {
   const isInverse = tone === "inverse";
+  const count = pillars.length;
 
   return (
     <ul
       className={cn(
-        "grid list-none grid-cols-1 gap-0 md:grid-cols-3",
+        "grid list-none grid-cols-1 gap-0",
+        count >= 5
+          ? "sm:grid-cols-2 lg:grid-cols-5"
+          : count === 4
+            ? "sm:grid-cols-2 lg:grid-cols-4"
+            : "md:grid-cols-3",
         className,
       )}
     >
@@ -41,7 +47,7 @@ export function EditorialPillars({
               "flex flex-col gap-4 py-10",
               isInverse ? "border-border-inverse" : "border-border",
               "border-b last:border-b-0",
-              "md:border-b-0 md:border-r md:px-10 md:py-2 md:last:border-r-0",
+              "md:border-b-0 md:border-r md:px-8 md:py-2 md:last:border-r-0 lg:px-6 xl:px-8",
               isFirst && "pt-0 md:pl-0",
               isLast && "md:pr-0",
             )}

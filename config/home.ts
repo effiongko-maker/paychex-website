@@ -10,7 +10,7 @@ import { assets } from "@/config/assets";
  * Homepage content — Brand & Messaging Framework.
  * Grounded in the company profile: Nigerian engineering, construction
  * and technology services company (est. 2008). Execution first;
- * capabilities as specialist disciplines. Clients may engage one
+ * five complementary areas of expertise. Clients may engage one
  * capability or several.
  */
 
@@ -43,28 +43,11 @@ export const homeHero = {
 
 export const homeIdentity = {
   headline: {
-    lead: "Specialist disciplines.",
-    emphasis: "Disciplined execution.",
+    lead: "Five areas of expertise.",
+    emphasis: "One integrated partner.",
   },
   supporting:
-    "Technology, operations and stakeholder engagement — each a capability in its own right. Engage one, or several, under the same standard of ownership.",
-  pillars: [
-    {
-      title: "Technology",
-      description:
-        "ICT infrastructure, software, digital identity and platforms that keep institutions connected and operating.",
-    },
-    {
-      title: "Operations",
-      description:
-        "Procurement, logistics, BPO, construction support and field delivery that keep projects on schedule.",
-    },
-    {
-      title: "People & Experiences",
-      description:
-        "Training, capacity development and events & conference management for effective stakeholder engagement.",
-    },
-  ] as const satisfies readonly EditorialPillar[],
+    "PayChex brings specialist capabilities together around complex programmes — engage one area, or several, under the same standard of ownership.",
 };
 
 export const homeHeroTrustSignals = [
@@ -76,140 +59,58 @@ export const homeHeroTrustSignals = [
 ] as const satisfies readonly EditorialTrustSignal[];
 
 export const homeCapabilities = {
-  headline: "What we deliver.",
+  headline: "Our capabilities.",
   supporting:
-    "Specialist capability across engineering, technology, infrastructure, operations and stakeholder engagement — the disciplines behind complex project delivery.",
-  stories: [
-    {
-      index: "01",
-      title: "Technology & ICT Infrastructure",
-      description:
-        "We design, deploy and support networks, platforms and digital systems for institutions that need reliable connectivity and control.",
-      href: "/solutions/technology",
-      linkLabel: "Explore technology",
-      layout: "text-start" as const,
-      frame: "landscape" as const,
-      media: {
-        type: "image" as const,
-        src: assets.images.home.capabilities.technology,
-        alt: "ICT infrastructure and technology implementation",
-        sizes: "(max-width: 1024px) 100vw, 58vw",
-      },
-    },
-    {
-      index: "02",
-      title: "Events & Conference Management",
-      description:
-        "We design and deliver conferences, summits and stakeholder gatherings — from concept and logistics to on-site implementation.",
-      href: "/solutions/events",
-      linkLabel: "Explore events",
-      layout: "media-start" as const,
-      frame: "wide" as const,
-      media: {
-        type: "image" as const,
-        src: assets.images.home.capabilities.strategy,
-        alt: "Stakeholder conference and event delivery",
-        sizes: "(max-width: 1024px) 100vw, 58vw",
-      },
-    },
-    {
-      index: "03",
-      title: "Infrastructure & Construction Support",
-      description:
-        "We deliver facilities, fit-outs and construction support with engineering-led project control — from planning through handover.",
-      href: "/solutions/construction",
-      linkLabel: "Explore infrastructure",
-      layout: "text-start" as const,
-      frame: "portrait" as const,
-      media: {
-        type: "image" as const,
-        src: assets.images.home.capabilities.infrastructure,
-        alt: "Construction and infrastructure project delivery",
-        sizes: "(max-width: 1024px) 100vw, 42vw",
-      },
-    },
-  ],
-  catalogueLabel: "Our capabilities",
+    "Specialist capability across technology, facilities, construction, professional services and institutional programmes — assembled to the work at hand.",
   catalogue: [
     {
-      title: "Technology",
+      title: "IT & Telecommunications",
       description:
-        "Software and digital systems that improve how institutions operate.",
+        "Technology, connectivity and digital infrastructure that keep organisations connected and operating.",
+      href: "/solutions#it-telecommunications",
       image: {
         src: assets.images.home.catalogue.technology,
         alt: "Technology systems and digital operations",
       },
     },
     {
-      title: "ICT Infrastructure",
+      title: "Facility Management",
       description:
-        "Connectivity and technology environments built and sustained for reliability.",
+        "Reliable management of the physical environments organisations depend on every day.",
+      href: "/solutions#facility-management",
       image: {
-        src: assets.images.home.catalogue.ict,
-        alt: "ICT networking and connectivity infrastructure",
+        src: assets.images.home.catalogue.logistics,
+        alt: "Facility and site support operations",
+      },
+    },
+    {
+      title: "Construction & Design",
+      description:
+        "From design and planning through construction, renovation and delivery.",
+      href: "/solutions#construction-design",
+      image: {
+        src: assets.images.home.catalogue.construction,
+        alt: "Construction support and field infrastructure",
+      },
+    },
+    {
+      title: "Consulting & Professional Services",
+      description:
+        "Helping organisations improve how they work, make better decisions and execute more effectively.",
+      href: "/solutions#consulting-professional",
+      image: {
+        src: assets.images.home.catalogue.training,
+        alt: "Professional training and advisory workshop",
       },
     },
     {
       title: "Events & Conference Management",
       description:
-        "High-level conferences, summits and stakeholder engagement programmes.",
+        "Designing and delivering high-level events, conferences and institutional programmes.",
+      href: "/solutions#events-conference",
       image: {
         src: assets.images.home.catalogue.events,
-        alt: "Conference and stakeholder event delivery",
-      },
-    },
-    {
-      title: "Training & Capacity Development",
-      description:
-        "Technical training that transfers capability to the teams who must sustain results.",
-      image: {
-        src: assets.images.home.catalogue.training,
-        alt: "Technical training and capacity development",
-      },
-    },
-    {
-      title: "Business Process Outsourcing",
-      description:
-        "Contact centres, data capture and managed operations for institutional clients.",
-      image: {
-        src: assets.images.home.catalogue.bpo,
-        alt: "Business process outsourcing operations",
-      },
-    },
-    {
-      title: "Procurement",
-      description:
-        "Sourcing and supply chain management that keep projects stocked and on schedule.",
-      image: {
-        src: assets.images.home.catalogue.procurement,
-        alt: "Procurement and supply chain operations",
-      },
-    },
-    {
-      title: "Logistics",
-      description:
-        "Warehousing, transport and field logistics across people, materials and sites.",
-      image: {
-        src: assets.images.home.catalogue.logistics,
-        alt: "Logistics and field transport operations",
-      },
-    },
-    {
-      title: "Digital Identity",
-      description:
-        "Data capture and enrolment services for large-scale identity programmes.",
-      image: {
-        src: assets.images.home.catalogue.identity,
-        alt: "Digital identity enrolment and data capture",
-      },
-    },
-    {
-      title: "Construction Support",
-      description:
-        "Civil works, facilities and construction support for institutional projects.",
-      image: {
-        src: assets.images.home.catalogue.construction,
-        alt: "Construction support and field infrastructure",
+        alt: "Conference venue prepared for institutional delivery",
       },
     },
   ],
@@ -263,33 +164,48 @@ export const homeCredibility = {
     projects: [
       {
         id: "events",
-        label: "Events & Stakeholder Engagement",
-        title: "International Events & Stakeholder Management",
+        label: "Events & Conference Management",
+        title: "ATU Conference of Plenipotentiaries 2026",
         description:
-          "Government summits, international conferences and protocol-driven events delivered for senior public officials, development partners and enterprise leaders.",
-        href: "/projects#events",
+          "A major institutional conference for government representatives, industry stakeholders and senior participants within the African telecommunications ecosystem.",
+        href: "/projects#events-conference",
         imageSide: "left" as const,
-        media: null as MediaSource | null,
+        media: {
+          type: "image" as const,
+          src: assets.images.home.catalogue.events,
+          alt: "Conference venue prepared for institutional delivery",
+          sizes: "(max-width: 1024px) 100vw, 48vw",
+        } satisfies MediaSource,
       },
       {
         id: "facilities",
-        label: "Infrastructure",
+        label: "Construction & Design",
         title: "Digital Infrastructure & Smart Facilities",
         description:
-          "Engineering, construction and commissioning of digital parks, institutional facilities and technology environments built to last.",
-        href: "/projects#facilities",
+          "Digital parks, institutional facilities and technology environments engineered, fitted out and commissioned for operational use.",
+        href: "/projects#construction-design",
         imageSide: "right" as const,
-        media: null as MediaSource | null,
+        media: {
+          type: "image" as const,
+          src: assets.images.home.catalogue.construction,
+          alt: "Construction and facilities delivery",
+          sizes: "(max-width: 1024px) 100vw, 48vw",
+        } satisfies MediaSource,
       },
       {
         id: "connectivity",
-        label: "Technology",
+        label: "IT & Telecommunications",
         title: "National Connectivity Programmes",
         description:
-          "Broadband, campus networks and ICT rollouts delivered across universities, government institutions and regional initiatives.",
-        href: "/projects#connectivity",
+          "Broadband, campus networks and ICT rollouts installed and commissioned for universities, government institutions and regional programmes.",
+        href: "/projects#it-telecommunications",
         imageSide: "left" as const,
-        media: null as MediaSource | null,
+        media: {
+          type: "image" as const,
+          src: assets.images.home.catalogue.ict,
+          alt: "ICT networking and connectivity infrastructure",
+          sizes: "(max-width: 1024px) 100vw, 48vw",
+        } satisfies MediaSource,
       },
     ],
   },

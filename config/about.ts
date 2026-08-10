@@ -24,7 +24,7 @@ export const aboutIdentity = {
     emphasis: "That is the whole story.",
   },
   paragraphs: [
-    "PayChex is a Nigerian execution company. Since 2008 we have delivered technology, infrastructure, operations, events and people capability for institutions that cannot afford vague outcomes.",
+    "PayChex is a Nigerian engineering, construction and technology services company. Since 2008 we have delivered specialist capability across IT & telecommunications, facilities, construction, professional services and institutional engagements — for organisations that cannot afford vague outcomes.",
     "Ambition is rarely the problem. Work stalls when ownership is unclear, specialist capacity is missing, or delivery stops at installation.",
     "Clients engage us for one service or several. We work with ministries, regulators, development partners and enterprises that need reliable delivery — and accountability that holds until results do.",
   ],
@@ -33,7 +33,7 @@ export const aboutIdentity = {
 export const aboutApproach = {
   headline: "How we approach execution.",
   supporting:
-    "Four disciplines on every engagement — practical, sequential and owned.",
+    "Four stages on every engagement — practical, sequential and owned.",
   principles: [
     {
       index: "01",
@@ -65,23 +65,32 @@ export const aboutApproach = {
 export const aboutCapabilities = {
   headline: "Specialist capability.",
   supporting:
-    "Each discipline stands on its own. Together they show the range of work we take on.",
+    "Five areas of expertise. Each stands on its own. Together they show the range of work we take on.",
   pillars: [
     {
-      title: "Technology",
-      description: "Digital systems institutions can depend on.",
+      title: "IT & Telecommunications",
+      description:
+        "Technology, connectivity and digital infrastructure institutions can depend on.",
     },
     {
-      title: "Infrastructure",
-      description: "Physical infrastructure that enables delivery.",
+      title: "Facility Management",
+      description:
+        "Reliable management of the physical environments organisations depend on every day.",
     },
     {
-      title: "Operations",
-      description: "Operational capability that keeps programmes moving.",
+      title: "Construction & Design",
+      description:
+        "From design and planning through construction, renovation and delivery.",
     },
     {
-      title: "People",
-      description: "Capability transfer that lasts beyond delivery.",
+      title: "Consulting & Professional Services",
+      description:
+        "Advisory, procurement, training and managed services that improve execution.",
+    },
+    {
+      title: "Events & Conference Management",
+      description:
+        "High-level events, conferences and institutional programmes delivered to brief.",
     },
   ],
 };

@@ -24,7 +24,7 @@ import type { MediaSource } from "@/types/media";
 
 type PreviewProject = (typeof homeCredibility.workPreview.projects)[number];
 
-function PreviewImage({ media }: { media: MediaSource | null }) {
+function PreviewImage({ media }: { media: MediaSource }) {
   const frameRef = useRef<HTMLElement | null>(null);
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -62,25 +62,7 @@ function PreviewImage({ media }: { media: MediaSource | null }) {
           )}
           style={{ y: parallaxY }}
         >
-          {media ? (
-            <Media source={media} mutedTone="soft" />
-          ) : (
-            <div className="absolute inset-0" aria-hidden>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(255,255,255,0.55),transparent_55%),radial-gradient(ellipse_at_80%_90%,rgba(17,17,17,0.04),transparent_50%)]" />
-              <div
-                className="absolute inset-0 opacity-[0.55]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, rgba(17,17,17,0.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,17,17,0.055) 1px, transparent 1px)",
-                  backgroundSize: "28px 28px",
-                }}
-              />
-              <span className="absolute top-4 left-4 h-3 w-3 border-t border-l border-foreground/15" />
-              <span className="absolute top-4 right-4 h-3 w-3 border-t border-r border-foreground/15" />
-              <span className="absolute bottom-4 left-4 h-3 w-3 border-b border-l border-foreground/15" />
-              <span className="absolute right-4 bottom-4 h-3 w-3 border-r border-b border-foreground/15" />
-            </div>
-          )}
+          <Media source={media} mutedTone="soft" />
         </motion.div>
       </motion.div>
     </figure>
@@ -93,9 +75,10 @@ function PreviewProject({
   project: PreviewProject;
 }) {
   const imageFirst = project.imageSide === "left";
+  const hasMedia = Boolean(project.media);
   const baseDelay = 0.04;
 
-  const mediaColumn = (
+  const mediaColumn = project.media ? (
     <div className="min-w-0 w-full lg:flex-1">
       <Link
         href={project.href}
@@ -105,10 +88,15 @@ function PreviewProject({
         <PreviewImage media={project.media} />
       </Link>
     </div>
-  );
+  ) : null;
 
   const copyColumn = (
-    <div className="flex min-w-0 w-full flex-col gap-5 md:gap-6 lg:flex-1 lg:pt-1">
+    <div
+      className={cn(
+        "flex min-w-0 w-full flex-col gap-5 md:gap-6 lg:pt-1",
+        hasMedia ? "lg:flex-1" : "lg:max-w-3xl",
+      )}
+    >
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -180,17 +168,26 @@ function PreviewProject({
 
   return (
     <article className="w-full">
-      <div className="flex w-full flex-col gap-10 md:gap-12 lg:flex-row lg:items-start lg:gap-14 xl:gap-16">
-        {imageFirst ? (
-          <>
-            {mediaColumn}
-            {copyColumn}
-          </>
+      <div
+        className={cn(
+          "flex w-full flex-col gap-10 md:gap-12",
+          hasMedia && "lg:flex-row lg:items-start lg:gap-14 xl:gap-16",
+        )}
+      >
+        {hasMedia ? (
+          imageFirst ? (
+            <>
+              {mediaColumn}
+              {copyColumn}
+            </>
+          ) : (
+            <>
+              {copyColumn}
+              {mediaColumn}
+            </>
+          )
         ) : (
-          <>
-            {copyColumn}
-            {mediaColumn}
-          </>
+          copyColumn
         )}
       </div>
     </article>

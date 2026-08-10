@@ -7,7 +7,7 @@ import { CapsHero } from "@/components/sections/capabilities/CapsHero";
 export const metadata: Metadata = {
   title: "Capabilities",
   description:
-    "Specialist capability. Disciplined execution. Technology, infrastructure, operations and people — how PayChex delivers complex programmes.",
+    "Five areas of expertise. One integrated partner. PayChex brings specialist capabilities together across technology, infrastructure, facilities, professional services and institutional engagements.",
 };
 
 export default function CapabilitiesPage() {
