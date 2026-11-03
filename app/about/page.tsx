@@ -11,7 +11,7 @@ import { AboutWhoWeAre } from "@/components/sections/about/AboutWhoWeAre";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why organisations trust PayChex with important work — specialist capability, disciplined delivery and clear accountability since 2008.",
+    "Meet PayChex, a Nigerian integrated solutions partner bringing together specialist teams to deliver technology, facilities, construction and institutional programmes.",
 };
 
 export default function AboutPage() {

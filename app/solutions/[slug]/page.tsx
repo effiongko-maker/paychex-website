@@ -42,9 +42,17 @@ export default async function CapabilityDetailPage({ params }: PageProps) {
   const capability = getCapabilityBySlug(slug);
   if (!capability) notFound();
 
-  const related = capabilityPages
-    .filter((page) => page.slug !== capability.slug)
-    .slice(0, 3);
+  const relatedSlugs: Record<string, readonly string[]> = {
+    "stakeholder-engagement": ["events", "training", "bpo"],
+    events: ["stakeholder-engagement", "logistics", "training"],
+    training: ["stakeholder-engagement", "bpo", "events"],
+    bpo: ["training", "stakeholder-engagement", "technology"],
+  };
+  const preferred = relatedSlugs[capability.slug] ?? [];
+  const related = [
+    ...preferred.map((slug) => getCapabilityBySlug(slug)).filter((page) => page !== undefined),
+    ...capabilityPages.filter((page) => page.slug !== capability.slug && !preferred.includes(page.slug)),
+  ].filter((page) => page.slug !== capability.slug).slice(0, 3);
 
   return (
     <>
