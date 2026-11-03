@@ -21,7 +21,7 @@ export const assets = {
   },
   images: {
     home: {
-      hero: "/images/home/hero.jpg",
+      hero: "/images/home/integrated-hero.webp",
     capabilities: {
       infrastructure: "/images/home/capabilities/infrastructure.jpg",
       technology: "/images/home/capabilities/technology.jpg",

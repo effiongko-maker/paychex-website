@@ -15,7 +15,7 @@ import { assets } from "@/config/assets";
 export const homeHeroMedia = {
   type: "image",
   src: assets.images.home.hero,
-  alt: "Telecom and ICT infrastructure delivery on a Nigerian project site",
+  alt: "Composite illustration of telecommunications, conferences, professional collaboration, construction and emergency operations",
   priority: true,
   sizes: "(max-width: 768px) 90vw, 42vw",
 } as const satisfies MediaSource;
