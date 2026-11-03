@@ -1,8 +1,8 @@
+import { RippleHero } from "@/components/sections/home/RippleHero";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Reveal } from "@/components/motion/Reveal";
-import { EditorialMedia } from "@/components/patterns/EditorialMedia";
 import { PageHero } from "@/components/patterns/PageHero";
 import { ImpactMetricsPanel } from "@/components/sections/home/ImpactMetricsPanel";
 import { buttonVariants } from "@/components/ui/Button";
@@ -10,8 +10,6 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import {
   homeHero,
-  homeHeroMedia,
-  homeHeroMediaOverlay,
 } from "@/config/home";
 import { cn } from "@/lib/cn";
 import { motionTokens } from "@/lib/motion";
@@ -61,12 +59,9 @@ export function HomeHero() {
 
           <div className="relative md:justify-self-end md:w-full">
             <FadeIn duration={motionTokens.duration.slow}>
-              <EditorialMedia
-                source={homeHeroMedia}
-                overlayOpacity={homeHeroMediaOverlay}
-              />
+              <RippleHero />
             </FadeIn>
-            <ImpactMetricsPanel />
+            <ImpactMetricsPanel inline />
           </div>
         </div>
       </Container>

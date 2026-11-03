@@ -11,7 +11,7 @@ import { motionTokens } from "@/lib/motion";
 
 const INTERVAL_MS = 5500;
 
-export function ImpactMetricsPanel() {
+export function ImpactMetricsPanel({ inline = false }: { inline?: boolean }) {
   const prefersReducedMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
 
@@ -30,9 +30,9 @@ export function ImpactMetricsPanel() {
   return (
     <motion.aside
       className={cn(
-        "absolute bottom-5 left-0 z-10 hidden w-[13.5rem] -translate-x-10 lg:block xl:bottom-7 xl:-translate-x-14",
-        "border border-white/40 bg-surface/70 px-8 py-7",
-        "shadow-[0_18px_50px_-28px_rgb(0_0_0_/0.28)] backdrop-blur-md",
+        inline ? "relative mt-3 w-full" : "absolute bottom-5 left-0 z-10 hidden w-[13.5rem] -translate-x-10 lg:block xl:bottom-7 xl:-translate-x-14",
+        inline ? "border border-border-subtle bg-surface px-5 py-4" : "border border-white/40 bg-surface/70 px-8 py-7",
+        inline ? "" : "shadow-[0_18px_50px_-28px_rgb(0_0_0_/0.28)] backdrop-blur-md",
       )}
       aria-label="Organisational trust signals"
       aria-live="polite"
