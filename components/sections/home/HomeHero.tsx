@@ -1,8 +1,8 @@
+import { RippleHero } from "@/components/sections/home/RippleHero";
 import Link from "next/link";
 
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Reveal } from "@/components/motion/Reveal";
-import { CapabilitySystem } from "@/components/sections/home/CapabilitySystem";
 import { PageHero } from "@/components/patterns/PageHero";
 import { ImpactMetricsPanel } from "@/components/sections/home/ImpactMetricsPanel";
 import { buttonVariants } from "@/components/ui/Button";
@@ -59,7 +59,7 @@ export function HomeHero() {
 
           <div className="relative md:justify-self-end md:w-full">
             <FadeIn duration={motionTokens.duration.slow}>
-              <CapabilitySystem />
+              <RippleHero />
             </FadeIn>
             <ImpactMetricsPanel inline />
           </div>
