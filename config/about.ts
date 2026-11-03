@@ -11,7 +11,7 @@ export const aboutHero = {
     emphasis: "not assumed.",
   },
   supporting:
-    "PayChex helps governments, regulators, development organisations and enterprises turn initiatives into operational reality — through specialist capability, clear ownership and delivery that holds.",
+    "PayChex helps governments, regulators, development organisations and enterprises turn initiatives into operational reality, through specialist capability, clear ownership and delivery that holds.",
   media: {
     src: assets.images.about.hero,
     alt: "Engineering planning and programme coordination for institutional delivery",
@@ -24,40 +24,40 @@ export const aboutIdentity = {
     emphasis: "That is the whole story.",
   },
   paragraphs: [
-    "PayChex is a Nigerian engineering, construction and technology services company. Since 2008 we have delivered specialist capability across IT & telecommunications, facilities, construction, professional services and institutional engagements — for organisations that cannot afford vague outcomes.",
-    "Ambition is rarely the problem. Work stalls when ownership is unclear, specialist capacity is missing, or delivery stops at installation.",
-    "Clients engage us for one service or several. We work with ministries, regulators, development partners and enterprises that need reliable delivery — and accountability that holds until results do.",
+    "PayChex is a Nigerian integrated solutions partner. Since 2008, our work has spanned technology, telecommunications, facilities, construction, professional services and institutional programmes. We bring these capabilities together around the needs of each engagement.",
+    "Good ideas need more than a plan. They need the right expertise, people who understand the context and a team willing to see the work through.",
+    "Some clients come to us for a single service. Others need several teams working together. In both cases, we focus on clear responsibilities, good coordination and work that stands up beyond handover.",
   ],
 };
 
 export const aboutApproach = {
   headline: "How we approach execution.",
   supporting:
-    "Four stages on every engagement — practical, sequential and owned.",
+    "A practical way of working, from the first conversation to lasting results.",
   principles: [
     {
       index: "01",
       title: "Understand",
       description:
-        "We begin with operational realities — constraints, stakeholders, systems and field conditions — before proposing a path.",
+        "We listen first. We look at the people, institutions, systems and practical constraints involved before agreeing on an approach.",
     },
     {
       index: "02",
       title: "Mobilise",
       description:
-        "We put the right specialists, resources and field capacity on the work — one capability or several.",
+        "We bring together the right specialists, resources and partners, and make sure everyone understands their role.",
     },
     {
       index: "03",
       title: "Deliver",
       description:
-        "Clear ownership, measurable milestones and disciplined follow-through from mobilisation to handover.",
+        "We manage the work against agreed milestones, keep stakeholders informed and address problems as they arise.",
     },
     {
       index: "04",
       title: "Strengthen",
       description:
-        "Engagements should leave institutions stronger — through training, transfer and lasting operational support.",
+        "We plan for what happens after delivery, including knowledge transfer, operational support and the relationships needed to sustain progress.",
     },
   ],
 };
@@ -85,7 +85,7 @@ export const aboutCapabilities = {
     {
       title: "Consulting & Professional Services",
       description:
-        "Advisory, procurement, training and managed services that improve execution.",
+        "Advisory, stakeholder engagement, procurement, training and managed services that support better decisions and delivery.",
     },
     {
       title: "Events & Conference Management",
@@ -104,7 +104,7 @@ export const aboutValue = {
       title: "Government Programmes",
       icon: "government" as const,
       description:
-        "Moving public institutions from policy intent to operational delivery.",
+        "Supporting public institutions with planning, coordination and practical programme delivery.",
     },
     {
       title: "ICT infrastructure",
@@ -143,10 +143,16 @@ export const aboutValue = {
         "Contact centres, data capture and back-office support to defined standards.",
     },
     {
+      title: "Stakeholder engagement",
+      icon: "government" as const,
+      description:
+        "Bringing public institutions, partners and communities into productive dialogue throughout a programme.",
+    },
+    {
       title: "Capacity development",
       icon: "training" as const,
       description:
-        "Practical learning that transfers capability to the teams who sustain results.",
+        "Practical learning that helps teams build the skills to sustain their work.",
     },
   ],
 };
@@ -154,7 +160,7 @@ export const aboutValue = {
 export const aboutThinking = {
   headline: "How we think about the work.",
   supporting:
-    "Operating principles that guide decisions on every engagement.",
+    "The principles that shape how we work with clients, partners and the people affected by a project.",
   beliefs: [
     {
       title: "Execution creates confidence.",
@@ -164,7 +170,7 @@ export const aboutThinking = {
     {
       title: "Capability must remain after projects end.",
       description:
-        "Delivery that leaves no lasting operational strength is incomplete — regardless of what was installed.",
+        "Delivery that leaves no lasting operational strength is incomplete, regardless of what was installed.",
     },
     {
       title: "Technology succeeds only when operations support it.",
@@ -182,7 +188,7 @@ export const aboutThinking = {
 export const aboutCta = {
   headline: "Let's discuss your next programme.",
   supporting:
-    "One capability or several — if the work matters and it needs to get done, we should talk.",
+    "One capability or several, if the work matters and it needs to get done, we should talk.",
   primary: {
     label: "Start a conversation",
     href: "/contact",

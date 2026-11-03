@@ -13,7 +13,7 @@ export const capabilitiesHub = {
       emphasis: "Disciplined execution.",
     },
     supporting:
-      "From technology and infrastructure to facilities, professional services and major events — the expertise PayChex brings to complex programme delivery.",
+      "Technology, infrastructure, facilities, professional services and events. Five areas of expertise that can stand alone or work together, depending on what a project needs.",
     media: {
       alt: "Multidisciplinary programme execution across engineering, technology and field operations",
     },
@@ -24,7 +24,7 @@ export const capabilitiesHub = {
       emphasis: "One integrated partner.",
     },
     supporting:
-      "PayChex brings specialist capabilities together to deliver complex programmes across technology, infrastructure, facilities, professional services and institutional engagements.",
+      "Our work covers five complementary areas. Clients can engage one team for a specific need or bring several together under a coordinated delivery approach.",
   },
   cta: {
     headline: {
@@ -32,7 +32,7 @@ export const capabilitiesHub = {
       emphasis: "When it matters most.",
     },
     supporting:
-      "One specialist capability or several working together — with one team accountable for delivery.",
+      "Tell us what you need to achieve. We'll help identify the right expertise and a practical way to bring the work together.",
     example:
       "For programmes that require technology, facilities, logistics, procurement and stakeholder management, PayChex can bring the right capabilities together under one delivery structure.",
     primary: {
@@ -57,11 +57,11 @@ export type CapabilityFamily = {
   title: string;
   introduction: string;
   items: readonly CapabilityItem[];
-  /** Card grid (default) or compact editorial list — Events uses list for balance */
+  /** Card grid (default) or compact editorial list, Events uses list for balance */
   itemLayout?: "cards" | "list";
 };
 
-/** Overview catalogue — concise cards only. Detail lives on slug pages. */
+/** Overview catalogue, concise cards only. Detail lives on slug pages. */
 export const capabilityFamilies: readonly CapabilityFamily[] = [
   {
     id: "it-telecommunications",
@@ -72,7 +72,7 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
       {
         title: "Software & Platforms",
         description:
-          "Digital systems built for how institutions operate day to day — not only at launch.",
+          "Digital systems built for how institutions operate day to day, not only at launch.",
         href: "/solutions/technology",
       },
       {
@@ -145,7 +145,7 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
     id: "consulting-professional",
     title: "Consulting & Professional Services",
     introduction:
-      "Helping organisations improve how they work, make better decisions and execute more effectively.",
+      "Advisory, stakeholder engagement, procurement, training and managed services that help organisations plan, coordinate and deliver.",
     items: [
       {
         title: "Procurement",
@@ -168,7 +168,7 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
       {
         title: "Stakeholder Engagement & Institutional Coordination",
         description:
-          "Strategic stakeholder mapping, consultations, government liaison and engagement programmes that build alignment and support effective project delivery.",
+          "Stakeholder mapping, consultations, government liaison and ongoing coordination to help people and institutions work towards shared programme goals.",
         href: "/solutions/stakeholder-engagement",
       },
     ],
@@ -201,7 +201,7 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
       {
         title: "Stakeholder Coordination for Events",
         description:
-          "Delegate, institutional and partner coordination supporting effective event delivery.",
+          "Coordinating speakers, delegates, hosts and institutional partners before and during an event.",
         href: "/solutions/events",
       },
       {
@@ -241,7 +241,7 @@ export const capabilityPages = [
     title: "Technology",
     headline: "Systems institutions can actually run.",
     supporting:
-      "We build and deploy software and digital platforms that improve how government and enterprise organisations operate — day after day, not only at launch.",
+      "We build and deploy software and digital platforms that improve how government and enterprise organisations operate, day after day, not only at launch.",
     problem:
       "Too many technology projects stop at installation. Institutions need systems their teams can operate, measure and sustain.",
     delivery: [
@@ -250,7 +250,7 @@ export const capabilityPages = [
       "Support that keeps systems performing after go-live",
     ],
     outcomes:
-      "Technology that holds under real institutional use — with clear ownership through delivery and support.",
+      "Technology that holds under real institutional use, with clear ownership through delivery and support.",
     media: {
       src: assets.images.home.catalogue.technology,
       alt: "Digital systems and technology operations",
@@ -261,7 +261,7 @@ export const capabilityPages = [
     title: "ICT Infrastructure",
     headline: "Connectivity built to stay reliable.",
     supporting:
-      "We design, install and sustain ICT environments — networks, hardware and technology infrastructure — for institutions that cannot afford downtime.",
+      "We design, install and sustain ICT environments, networks, hardware and technology infrastructure, for institutions that cannot afford downtime.",
     problem:
       "Connectivity projects fail when deployment ignores field conditions, maintenance and the teams who must keep systems running.",
     delivery: [
@@ -281,7 +281,7 @@ export const capabilityPages = [
     title: "Events & Conference Management",
     headline: "Gatherings that meet institutional standards.",
     supporting:
-      "We manage conferences, summits and stakeholder events from concept through logistics, production and on-site delivery.",
+      "We plan and manage conferences, summits and institutional gatherings, coordinating everything from the programme and participants to production and on-site delivery.",
     problem:
       "High-stakes institutional events fail when logistics, production and stakeholder management are treated as afterthoughts.",
     delivery: [
@@ -290,7 +290,7 @@ export const capabilityPages = [
       "On-site delivery with clear ownership through close-out",
     ],
     outcomes:
-      "Events that run to brief — professional, controlled and credible for the institutions hosting them.",
+      "Events that run to brief, professional, controlled and credible for the institutions hosting them.",
     media: {
       src: assets.images.home.catalogue.events,
       alt: "Conference and institutional event delivery",
@@ -301,16 +301,16 @@ export const capabilityPages = [
     title: "Stakeholder Engagement & Institutional Coordination",
     headline: "Building relationships. Enabling collaboration.",
     supporting:
-      "We help government institutions, development partners and organisations identify, engage and build productive relationships with the stakeholders critical to their programmes. From stakeholder mapping and consultation to government liaison, strategic communications and multi-party coordination, we create the structures for meaningful participation, institutional alignment and informed decision-making.",
+      "We help government institutions, development partners and organisations work with the people and groups whose involvement matters to a programme. That can mean identifying stakeholders, organising consultations, supporting government liaison, shaping communications or keeping different parties informed and involved as the work progresses.",
     problem:
-      "Complex programmes can stall when the people and institutions affected by decisions are not identified, consulted or kept aligned. Effective delivery requires more than announcements: it requires structured engagement, clear communication and sustained coordination.",
+      "Projects become harder to deliver when the people affected by them are left out of the conversation, or when institutions are working from different expectations. Early consultation and consistent communication help teams understand concerns, resolve issues and make better decisions.",
     delivery: [
-      "Stakeholder identification, mapping and engagement strategy",
-      "Government liaison, consultations and multi-party dialogue",
-      "Community awareness, engagement documentation and follow-up",
+      "Identify stakeholders and develop a practical engagement plan",
+      "Organise consultations, government liaison and conversations between participating institutions",
+      "Coordinate community awareness, record feedback and follow up on agreed actions",
     ],
     outcomes:
-      "Stronger institutional relationships, informed participation and clearer alignment around programme objectives, helping projects move forward with confidence and accountability.",
+      "Better-informed stakeholders, clearer expectations and stronger working relationships throughout a programme.",
     media: {
       src: assets.images.home.catalogue.training,
       alt: "Professional consultation and stakeholder engagement",
@@ -321,7 +321,7 @@ export const capabilityPages = [
     title: "Training & Capacity Development",
     headline: "Capability that remains after handover.",
     supporting:
-      "We deliver practical training that leaves teams able to operate what has been installed — not workshops that fade after the session.",
+      "We deliver practical training that leaves teams able to operate what has been installed, not workshops that fade after the session.",
     problem:
       "Projects that transfer equipment without transferring capability leave institutions dependent and outcomes fragile.",
     delivery: [
@@ -330,7 +330,7 @@ export const capabilityPages = [
       "Knowledge transfer that supports lasting operational strength",
     ],
     outcomes:
-      "Teams who can sustain results — reducing reliance on external support after delivery.",
+      "Teams who can sustain results, reducing reliance on external support after delivery.",
     media: {
       src: assets.images.home.catalogue.training,
       alt: "Professional training and capacity development",
@@ -370,7 +370,7 @@ export const capabilityPages = [
       "Delivery tracking against programme milestones",
     ],
     outcomes:
-      "Procurement that protects schedule — not paperwork that arrives after the window has closed.",
+      "Procurement that protects schedule, not paperwork that arrives after the window has closed.",
     media: {
       src: assets.images.home.catalogue.procurement,
       alt: "Procurement and supply operations",
@@ -381,7 +381,7 @@ export const capabilityPages = [
     title: "Logistics",
     headline: "Movement with schedule discipline.",
     supporting:
-      "We manage warehousing, transport and field logistics across people, materials and sites — so deployment does not stall in transit.",
+      "We manage warehousing, transport and field logistics across people, materials and sites, so deployment does not stall in transit.",
     problem:
       "Field programmes fail when materials, teams and equipment cannot reach the right place at the right time.",
     delivery: [
@@ -390,7 +390,7 @@ export const capabilityPages = [
       "Field logistics support during mobilisation and delivery",
     ],
     outcomes:
-      "Logistics that make deployment predictable — especially across multi-site institutional programmes.",
+      "Logistics that make deployment predictable, especially across multi-site institutional programmes.",
     media: {
       src: assets.images.home.catalogue.logistics,
       alt: "Logistics, warehousing and transport operations",
@@ -410,7 +410,7 @@ export const capabilityPages = [
       "Quality control and handover that protect data integrity",
     ],
     outcomes:
-      "Identity operations that institutions can stand behind — accurate, controlled and deliverable at scale.",
+      "Identity operations that institutions can stand behind, accurate, controlled and deliverable at scale.",
     media: {
       src: assets.images.home.catalogue.identity,
       alt: "Digital identity enrolment and data capture",

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Reveal } from "@/components/motion/Reveal";
 import { CapabilityCatalogue } from "@/components/patterns/CapabilityCatalogue";
 import { Container } from "@/components/ui/Container";
@@ -33,6 +35,25 @@ export function HomeCapabilities() {
             delay={0.06}
           >
             <CapabilityCatalogue items={homeCapabilities.catalogue} />
+          </Reveal>
+
+          <Reveal direction="up" distance={motionTokens.distance.sm} delay={0.1}>
+            <div className="border-t border-border-subtle pt-8 md:pt-10">
+              <p className="mb-3 text-sm font-medium tracking-wide text-foreground/60">
+                Featured service
+              </p>
+              <Link
+                href={homeCapabilities.featuredService.href}
+                className="group inline-flex max-w-3xl flex-col gap-2 rounded-control focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+              >
+                <span className="text-xl font-medium underline-offset-4 group-hover:underline md:text-2xl">
+                  {homeCapabilities.featuredService.label}
+                </span>
+                <span className="max-w-2xl text-base leading-relaxed text-foreground/70">
+                  {homeCapabilities.featuredService.description}
+                </span>
+              </Link>
+            </div>
           </Reveal>
         </div>
       </Container>

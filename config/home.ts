@@ -8,10 +8,8 @@ import { assets } from "@/config/assets";
 
 /**
  * Homepage content — Brand & Messaging Framework.
- * Grounded in the company profile: Nigerian engineering, construction
- * and technology services company (est. 2008). Execution first;
- * five complementary areas of expertise. Clients may engage one
- * capability or several.
+ * Five complementary areas of expertise, brought together when the work
+ * calls for it. Preserve verified company and project facts.
  */
 
 export const homeHeroMedia = {
@@ -30,7 +28,7 @@ export const homeHero = {
     emphasis: "Execution that lasts.",
   },
   subtitle:
-    "PayChex is a Nigerian engineering, construction and technology services company. Since 2008, government institutions, development partners and enterprise clients have trusted us to deliver complex projects with clear accountability.",
+    "PayChex is an integrated solutions partner. We bring together expertise in technology, infrastructure, facilities, professional services and institutional programmes to help organisations get important work done. Our experience dates back to 2008.",
   primary: {
     label: "Explore capabilities",
     href: "/solutions",
@@ -47,12 +45,12 @@ export const homeIdentity = {
     emphasis: "One integrated partner.",
   },
   supporting:
-    "PayChex brings specialist capabilities together around complex programmes — engage one area, or several, under the same standard of ownership.",
+    "Some projects need one specialist team. Others need several working together. We bring the right expertise to each, with clear responsibility from start to finish.",
 };
 
 export const homeHeroTrustSignals = [
   { title: "Accountable", label: "Clear ownership" },
-  { title: "Engineering-led", label: "Disciplined delivery" },
+  { title: "Integrated", label: "Specialists working together" },
   { title: "Nationwide", label: "Operational reach" },
   { title: "Reliable", label: "On schedule, on brief" },
   { title: "Disciplined", label: "Quality & control" },
@@ -61,7 +59,13 @@ export const homeHeroTrustSignals = [
 export const homeCapabilities = {
   headline: "Our capabilities.",
   supporting:
-    "Specialist capability across technology, facilities, construction, professional services and institutional programmes — assembled to the work at hand.",
+    "From technology and facilities to stakeholder engagement and institutional programmes, we bring the right expertise together for the work at hand.",
+  featuredService: {
+    label: "Stakeholder Engagement & Institutional Coordination",
+    description:
+      "We help organisations engage the people and institutions that matter, build productive relationships and keep complex programmes moving.",
+    href: "/solutions/stakeholder-engagement",
+  },
   catalogue: [
     {
       title: "IT & Telecommunications",
@@ -96,7 +100,7 @@ export const homeCapabilities = {
     {
       title: "Consulting & Professional Services",
       description:
-        "Helping organisations improve how they work, make better decisions and execute more effectively.",
+        "Practical advisory, stakeholder engagement, training and managed services that help organisations work more effectively.",
       href: "/solutions#consulting-professional",
       image: {
         src: assets.images.home.catalogue.training,
@@ -119,13 +123,13 @@ export const homeCapabilities = {
 export const homeCredibility = {
   headline: "Proven at national scale.",
   supporting:
-    "Since 2008, PayChex has delivered complex projects for government institutions, regulators, development organisations and enterprise clients — with engineering discipline, operational reach and clear accountability.",
+    "Since 2008, PayChex has supported complex projects for government institutions, regulators, development organisations and enterprise clients. Our work brings together specialist teams, operational reach and clear accountability.",
   facts: [
     {
       label: "Established",
       value: "2008",
       emphasis: "figure" as const,
-      detail: "Incorporated in Nigeria as an engineering, construction and technology services company.",
+      detail: "Year of incorporation in Nigeria.",
     },
     {
       label: "Operational Reach",
@@ -156,7 +160,7 @@ export const homeCredibility = {
     label: "Selected work",
     headline: "Flagship programmes.",
     supporting:
-      "A curated look at the kinds of programmes we deliver—where execution, coordination and scale matter most.",
+      "A look at programmes where sound execution, coordination and scale make a difference.",
     viewAll: {
       label: "View all work",
       href: "/projects",
@@ -257,22 +261,22 @@ export const homeCredibility = {
 export const homeDeliveryModel = {
   headline: "How we execute.",
   supporting:
-    "A disciplined delivery approach — clear enough to govern, practical enough for complex institutional projects.",
+    "We start by understanding the work and the people it affects. Then we bring the right expertise together, deliver against clear milestones and help clients sustain the results.",
   stages: [
     {
-      title: "Plan",
+      title: "Understand",
       description:
-        "We define scope, success criteria and constraints; then programme the work, budget and procurement before mobilisation.",
+        "We listen, identify the people and institutions involved, and agree on the priorities, constraints and outcomes that matter.",
     },
     {
       title: "Deliver",
       description:
-        "We mobilise, build and implement — technology, infrastructure, events, logistics and field operations — with quality and schedule control.",
+        "We bring together the right people and resources, coordinate the work and stay accountable for quality, timelines and communication.",
     },
     {
-      title: "Enable",
+      title: "Strengthen",
       description:
-        "We test, commission and hand over — then provide training, maintenance and operational support beyond completion.",
+        "We support handover, build the capacity of the teams involved and help put the arrangements in place for results to last.",
     },
   ] as const satisfies readonly EditorialPillar[],
 };
