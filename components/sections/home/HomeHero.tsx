@@ -61,7 +61,7 @@ export function HomeHero() {
             <FadeIn duration={motionTokens.duration.slow}>
               <CapabilitySystem />
             </FadeIn>
-            <ImpactMetricsPanel />
+            <ImpactMetricsPanel inline />
           </div>
         </div>
       </Container>
