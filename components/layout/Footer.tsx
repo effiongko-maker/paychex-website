@@ -38,6 +38,14 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="mt-4 border-t border-border-inverse pt-5">
+              <Text variant="caption" as="p" className="mb-3 tracking-[0.12em] text-inverse-foreground/40">
+                Featured service
+              </Text>
+              <FooterLink href={footer.featuredService.href}>
+                {footer.featuredService.label}
+              </FooterLink>
+            </div>
           </div>
 
           <div className="flex flex-col gap-4 lg:pt-1">

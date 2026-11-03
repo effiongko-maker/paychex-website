@@ -57,11 +57,11 @@ export type CapabilityFamily = {
   title: string;
   introduction: string;
   items: readonly CapabilityItem[];
-  /** Card grid (default) or compact editorial list — Events uses list for balance */
+  /** Card grid (default) or compact editorial list, Events uses list for balance */
   itemLayout?: "cards" | "list";
 };
 
-/** Overview catalogue — concise cards only. Detail lives on slug pages. */
+/** Overview catalogue, concise cards only. Detail lives on slug pages. */
 export const capabilityFamilies: readonly CapabilityFamily[] = [
   {
     id: "it-telecommunications",
@@ -72,7 +72,7 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
       {
         title: "Software & Platforms",
         description:
-          "Digital systems built for how institutions operate day to day — not only at launch.",
+          "Digital systems built for how institutions operate day to day, not only at launch.",
         href: "/solutions/technology",
       },
       {
@@ -241,7 +241,7 @@ export const capabilityPages = [
     title: "Technology",
     headline: "Systems institutions can actually run.",
     supporting:
-      "We build and deploy software and digital platforms that improve how government and enterprise organisations operate — day after day, not only at launch.",
+      "We build and deploy software and digital platforms that improve how government and enterprise organisations operate, day after day, not only at launch.",
     problem:
       "Too many technology projects stop at installation. Institutions need systems their teams can operate, measure and sustain.",
     delivery: [
@@ -250,7 +250,7 @@ export const capabilityPages = [
       "Support that keeps systems performing after go-live",
     ],
     outcomes:
-      "Technology that holds under real institutional use — with clear ownership through delivery and support.",
+      "Technology that holds under real institutional use, with clear ownership through delivery and support.",
     media: {
       src: assets.images.home.catalogue.technology,
       alt: "Digital systems and technology operations",
@@ -261,7 +261,7 @@ export const capabilityPages = [
     title: "ICT Infrastructure",
     headline: "Connectivity built to stay reliable.",
     supporting:
-      "We design, install and sustain ICT environments — networks, hardware and technology infrastructure — for institutions that cannot afford downtime.",
+      "We design, install and sustain ICT environments, networks, hardware and technology infrastructure, for institutions that cannot afford downtime.",
     problem:
       "Connectivity projects fail when deployment ignores field conditions, maintenance and the teams who must keep systems running.",
     delivery: [
@@ -290,7 +290,7 @@ export const capabilityPages = [
       "On-site delivery with clear ownership through close-out",
     ],
     outcomes:
-      "Events that run to brief — professional, controlled and credible for the institutions hosting them.",
+      "Events that run to brief, professional, controlled and credible for the institutions hosting them.",
     media: {
       src: assets.images.home.catalogue.events,
       alt: "Conference and institutional event delivery",
@@ -321,7 +321,7 @@ export const capabilityPages = [
     title: "Training & Capacity Development",
     headline: "Capability that remains after handover.",
     supporting:
-      "We deliver practical training that leaves teams able to operate what has been installed — not workshops that fade after the session.",
+      "We deliver practical training that leaves teams able to operate what has been installed, not workshops that fade after the session.",
     problem:
       "Projects that transfer equipment without transferring capability leave institutions dependent and outcomes fragile.",
     delivery: [
@@ -330,7 +330,7 @@ export const capabilityPages = [
       "Knowledge transfer that supports lasting operational strength",
     ],
     outcomes:
-      "Teams who can sustain results — reducing reliance on external support after delivery.",
+      "Teams who can sustain results, reducing reliance on external support after delivery.",
     media: {
       src: assets.images.home.catalogue.training,
       alt: "Professional training and capacity development",
@@ -370,7 +370,7 @@ export const capabilityPages = [
       "Delivery tracking against programme milestones",
     ],
     outcomes:
-      "Procurement that protects schedule — not paperwork that arrives after the window has closed.",
+      "Procurement that protects schedule, not paperwork that arrives after the window has closed.",
     media: {
       src: assets.images.home.catalogue.procurement,
       alt: "Procurement and supply operations",
@@ -381,7 +381,7 @@ export const capabilityPages = [
     title: "Logistics",
     headline: "Movement with schedule discipline.",
     supporting:
-      "We manage warehousing, transport and field logistics across people, materials and sites — so deployment does not stall in transit.",
+      "We manage warehousing, transport and field logistics across people, materials and sites, so deployment does not stall in transit.",
     problem:
       "Field programmes fail when materials, teams and equipment cannot reach the right place at the right time.",
     delivery: [
@@ -390,7 +390,7 @@ export const capabilityPages = [
       "Field logistics support during mobilisation and delivery",
     ],
     outcomes:
-      "Logistics that make deployment predictable — especially across multi-site institutional programmes.",
+      "Logistics that make deployment predictable, especially across multi-site institutional programmes.",
     media: {
       src: assets.images.home.catalogue.logistics,
       alt: "Logistics, warehousing and transport operations",
@@ -410,7 +410,7 @@ export const capabilityPages = [
       "Quality control and handover that protect data integrity",
     ],
     outcomes:
-      "Identity operations that institutions can stand behind — accurate, controlled and deliverable at scale.",
+      "Identity operations that institutions can stand behind, accurate, controlled and deliverable at scale.",
     media: {
       src: assets.images.home.catalogue.identity,
       alt: "Digital identity enrolment and data capture",

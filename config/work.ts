@@ -59,7 +59,7 @@ export type WorkArea = {
   projects: readonly WorkProject[];
 };
 
-/** Shared ATU project — featured on Work page (single representative image) */
+/** Shared ATU project, featured on Work page (single representative image) */
 const atuConference: WorkProject = {
   id: "atu-cpl-2026",
   featured: true,
@@ -77,7 +77,7 @@ const atuConference: WorkProject = {
   media: {
     type: "image",
     src: assets.images.home.capabilitiesPage.eventsFeature,
-    alt: "ATU Conference of Plenipotentiaries 2026 — conference hall prepared for institutional delivery",
+    alt: "ATU Conference of Plenipotentiaries 2026, conference hall prepared for institutional delivery",
     sizes: "(max-width: 1024px) 100vw, 48vw",
     priority: true,
   },
@@ -234,7 +234,7 @@ const eventPortfolioCases: readonly EventCaseStudy[] = [
     id: "vivatech-2025",
     index: "05",
     category: "Events & Conference Management",
-    title: "Nigerian Delegation — VivaTech 2025",
+    title: "Nigerian Delegation, VivaTech 2025",
     location: "Paris, France",
     date: "June 2025",
     body: "Coordinated Nigeria's participation and executive engagements at VivaTech, supporting the country's stakeholder interactions within the global digital-innovation ecosystem.",
@@ -264,7 +264,7 @@ const eventPortfolioCases: readonly EventCaseStudy[] = [
     id: "unga80-2025",
     index: "06",
     category: "Events & Conference Management",
-    title: 'UNGA80 Stakeholder Event — "Connecting the Unconnected"',
+    title: 'UNGA80 Stakeholder Event, "Connecting the Unconnected"',
     location: "New York, USA",
     date: "September 2025",
     body: "Coordinated international stakeholder engagement alongside development partners, managing programme structure, logistics and executive interface for a high-level digital-inclusion platform.",
@@ -369,7 +369,7 @@ export const workPage = {
           featured: true,
           title: "NIMC NIN Enrolment Centres",
           location: "Nationwide",
-          body: "Nationwide identity enrolment and field mobilisation delivered for NIMC — deploying technology, field teams and operational control at institutional scale. The programme enrolled 500,000+ citizens and mobilised a nationwide network of 500+ field agents.",
+          body: "Nationwide identity enrolment and field mobilisation delivered for NIMC, deploying technology, field teams and operational control at institutional scale. The programme enrolled 500,000+ citizens and mobilised a nationwide network of 500+ field agents.",
           delivered: [
             "Nationwide NIN enrolment and data capture operations",
             "Deployment of 500+ field agents across the country",
@@ -382,7 +382,7 @@ export const workPage = {
           media: {
             type: "image" as const,
             src: assets.images.work.nimcEnrolment,
-            alt: "NIMC National Identification Number enrolment centre — powered by PayChex International Marketing Ltd.",
+            alt: "NIMC National Identification Number enrolment centre, powered by PayChex International Marketing Ltd.",
             sizes: "(max-width: 1024px) 100vw, 48vw",
           } satisfies MediaSource,
           gallery: null,
@@ -391,7 +391,7 @@ export const workPage = {
           id: "emergency-communications",
           title: "Emergency Communications Centre Support",
           location: "NCC",
-          body: "Management and technical support for Emergency Communication Centres on behalf of the NCC — sustaining national communication systems through monitoring, troubleshooting and operational response support.",
+          body: "Management and technical support for Emergency Communication Centres on behalf of the NCC, sustaining national communication systems through monitoring, troubleshooting and operational response support.",
           delivered: [
             "Emergency Communication Centre management and support",
             "Technical support for national communication systems",
@@ -472,7 +472,7 @@ export const workPage = {
           id: "digital-parks",
           featured: true,
           title: "Digital Parks Development",
-          location: "NCC — FCT, Kano & Maiduguri",
+          location: "NCC, FCT, Kano & Maiduguri",
           body: "Construction and equipping of digital ICT park facilities, coordinating physical works, technical requirements and stakeholder delivery to prepare the facilities for operational use.",
           delivered: [
             "Digital park development",
@@ -494,7 +494,7 @@ export const workPage = {
           id: "infrastructure-fitout-power",
           title: "Infrastructure, Fit-Out & Power Works",
           location: "NCC / FMCIDE",
-          body: "Selected institutional infrastructure engagements delivered as distinct projects — including NITT office furnishing in Maiduguri, solar solutions, generator supply and commissioning, and digital infrastructure upgrade works.",
+          body: "Selected institutional infrastructure engagements delivered as distinct projects, including NITT office furnishing in Maiduguri, solar solutions, generator supply and commissioning, and digital infrastructure upgrade works.",
           delivered: [
             "Furnishing and interior fit-out of the constructed NITT office, Maiduguri",
             "Supply and commissioning support for a 100KVA generator, Ibadan",
@@ -510,7 +510,7 @@ export const workPage = {
           id: "innovation-park-maiduguri",
           title: "Innovation Park Maiduguri",
           location: "Maiduguri",
-          body: "Construction of Innovation Park Maiduguri — delivering physical works for an institutional innovation facility prepared for operational use.",
+          body: "Construction of Innovation Park Maiduguri, delivering physical works for an institutional innovation facility prepared for operational use.",
           delivered: [
             "Construction delivery for the innovation park facility",
             "Site and infrastructure works coordination",
@@ -579,7 +579,7 @@ export const workPage = {
         {
           id: "technical-operational-training",
           title: "Technical & Operational Training",
-          body: "Specialized training and capacity development supporting technical, operational and institutional requirements — leaving teams able to sustain what has been delivered.",
+          body: "Specialized training and capacity development supporting technical, operational and institutional requirements, leaving teams able to sustain what has been delivered.",
           delivered: [
             "Technical training",
             "Operational training",

@@ -45,7 +45,7 @@ export const homeIdentity = {
     emphasis: "One integrated partner.",
   },
   supporting:
-    "PayChex brings specialist capabilities together around complex programmes — engage one area, or several, under the same standard of ownership.",
+    "Some projects need one specialist team. Others need several working together. We bring the right expertise to each, with clear responsibility from start to finish.",
 };
 
 export const homeHeroTrustSignals = [
@@ -59,7 +59,13 @@ export const homeHeroTrustSignals = [
 export const homeCapabilities = {
   headline: "Our capabilities.",
   supporting:
-    "Specialist capability across technology, facilities, construction, professional services and institutional programmes — assembled to the work at hand.",
+    "From technology and facilities to stakeholder engagement and institutional programmes, we bring the right expertise together for the work at hand.",
+  featuredService: {
+    label: "Stakeholder Engagement & Institutional Coordination",
+    description:
+      "We help organisations engage the people and institutions that matter, build productive relationships and keep complex programmes moving.",
+    href: "/solutions/stakeholder-engagement",
+  },
   catalogue: [
     {
       title: "IT & Telecommunications",
@@ -154,7 +160,7 @@ export const homeCredibility = {
     label: "Selected work",
     headline: "Flagship programmes.",
     supporting:
-      "A curated look at the kinds of programmes we deliver—where execution, coordination and scale matter most.",
+      "A look at programmes where sound execution, coordination and scale make a difference.",
     viewAll: {
       label: "View all work",
       href: "/projects",

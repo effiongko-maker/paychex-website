@@ -18,6 +18,10 @@ export const siteConfig = {
     positioning:
       "PayChex International Marketing Limited brings together technology, facilities, construction, professional services and institutional programme delivery. Since 2008, we have worked with public and private organisations to turn complex requirements into practical results.",
     tagline: "Designed for Impact. Delivered with Purpose.",
+    featuredService: {
+      label: "Stakeholder Engagement & Institutional Coordination",
+      href: "/solutions/stakeholder-engagement",
+    },
     capabilities: [
       { label: "IT & Telecommunications", href: "/solutions#it-telecommunications" },
       { label: "Facility Management", href: "/solutions#facility-management" },

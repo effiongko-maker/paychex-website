@@ -11,7 +11,7 @@ export const aboutHero = {
     emphasis: "not assumed.",
   },
   supporting:
-    "PayChex helps governments, regulators, development organisations and enterprises turn initiatives into operational reality — through specialist capability, clear ownership and delivery that holds.",
+    "PayChex helps governments, regulators, development organisations and enterprises turn initiatives into operational reality, through specialist capability, clear ownership and delivery that holds.",
   media: {
     src: assets.images.about.hero,
     alt: "Engineering planning and programme coordination for institutional delivery",
@@ -143,6 +143,12 @@ export const aboutValue = {
         "Contact centres, data capture and back-office support to defined standards.",
     },
     {
+      title: "Stakeholder engagement",
+      icon: "government" as const,
+      description:
+        "Bringing public institutions, partners and communities into productive dialogue throughout a programme.",
+    },
+    {
       title: "Capacity development",
       icon: "training" as const,
       description:
@@ -164,7 +170,7 @@ export const aboutThinking = {
     {
       title: "Capability must remain after projects end.",
       description:
-        "Delivery that leaves no lasting operational strength is incomplete — regardless of what was installed.",
+        "Delivery that leaves no lasting operational strength is incomplete, regardless of what was installed.",
     },
     {
       title: "Technology succeeds only when operations support it.",
@@ -182,7 +188,7 @@ export const aboutThinking = {
 export const aboutCta = {
   headline: "Let's discuss your next programme.",
   supporting:
-    "One capability or several — if the work matters and it needs to get done, we should talk.",
+    "One capability or several, if the work matters and it needs to get done, we should talk.",
   primary: {
     label: "Start a conversation",
     href: "/contact",
