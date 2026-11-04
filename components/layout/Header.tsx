@@ -1,3 +1,4 @@
+import { MobileNav } from "@/components/layout/MobileNav";
 import Link from "next/link";
 
 import { HeaderFrame } from "@/components/layout/HeaderFrame";
@@ -12,7 +13,11 @@ export function Header() {
   return (
     <HeaderFrame>
       <Container className="relative flex h-full items-center justify-between gap-6">
-        <Logo priority />
+        <div className="relative z-10 flex shrink-0 items-center">
+          <Logo priority variant="logo" className="[&_img]:!h-[68px] sm:[&_img]:!h-[76px] lg:[&_img]:!h-[80px]" />
+        </div>
+
+        <MobileNav />
 
         <div className="absolute inset-y-0 left-1/2 hidden -translate-x-1/2 items-center md:flex">
           <PrimaryNav />

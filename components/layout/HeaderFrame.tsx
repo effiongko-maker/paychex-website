@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/cn";
 import { useScrolled } from "@/lib/use-scrolled";
@@ -16,12 +17,17 @@ const SCROLL_THRESHOLD = 50;
  */
 export function HeaderFrame({ children }: HeaderFrameProps) {
   const scrolled = useScrolled(SCROLL_THRESHOLD);
+  const pathname = usePathname();
+  const homeTop = pathname === "/" && !scrolled;
 
   return (
     <header
       data-scrolled={scrolled ? "true" : "false"}
+      data-home-dark={homeTop ? "true" : "false"}
+      data-home-page={pathname === "/" ? "true" : "false"}
       className={cn(
         "sticky top-0 z-50 w-full border-b",
+        homeTop && "text-white",
         "transition-[background-color,border-color,box-shadow,backdrop-filter] duration-(--duration-base) ease-(--ease-out)",
         scrolled
           ? "border-border bg-background/95 shadow-soft backdrop-blur-header"

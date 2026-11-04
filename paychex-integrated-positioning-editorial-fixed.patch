@@ -1,0 +1,309 @@
+diff --git a/config/home.ts b/config/home.ts
+--- a/config/home.ts
++++ b/config/home.ts
+@@ -8,10 +8,8 @@
+ 
+ /**
+  * Homepage content — Brand & Messaging Framework.
+- * Grounded in the company profile: Nigerian engineering, construction
+- * and technology services company (est. 2008). Execution first;
+- * five complementary areas of expertise. Clients may engage one
+- * capability or several.
++ * Five complementary areas of expertise, brought together when the work
++ * calls for it. Preserve verified company and project facts.
+  */
+ 
+ export const homeHeroMedia = {
+@@ -30,7 +28,7 @@
+     emphasis: "Execution that lasts.",
+   },
+   subtitle:
+-    "PayChex is a Nigerian engineering, construction and technology services company. Since 2008, government institutions, development partners and enterprise clients have trusted us to deliver complex projects with clear accountability.",
++    "PayChex is an integrated solutions partner. We bring together expertise in technology, infrastructure, facilities, professional services and institutional programmes to help organisations get important work done. Our experience dates back to 2008.",
+   primary: {
+     label: "Explore capabilities",
+     href: "/solutions",
+@@ -52,7 +50,7 @@
+ 
+ export const homeHeroTrustSignals = [
+   { title: "Accountable", label: "Clear ownership" },
+-  { title: "Engineering-led", label: "Disciplined delivery" },
++  { title: "Integrated", label: "Specialists working together" },
+   { title: "Nationwide", label: "Operational reach" },
+   { title: "Reliable", label: "On schedule, on brief" },
+   { title: "Disciplined", label: "Quality & control" },
+@@ -96,7 +94,7 @@
+     {
+       title: "Consulting & Professional Services",
+       description:
+-        "Helping organisations improve how they work, make better decisions and execute more effectively.",
++        "Practical advisory, stakeholder engagement, training and managed services that help organisations work more effectively.",
+       href: "/solutions#consulting-professional",
+       image: {
+         src: assets.images.home.catalogue.training,
+@@ -119,13 +117,13 @@
+ export const homeCredibility = {
+   headline: "Proven at national scale.",
+   supporting:
+-    "Since 2008, PayChex has delivered complex projects for government institutions, regulators, development organisations and enterprise clients — with engineering discipline, operational reach and clear accountability.",
++    "Since 2008, PayChex has supported complex projects for government institutions, regulators, development organisations and enterprise clients. Our work brings together specialist teams, operational reach and clear accountability.",
+   facts: [
+     {
+       label: "Established",
+       value: "2008",
+       emphasis: "figure" as const,
+-      detail: "Incorporated in Nigeria as an engineering, construction and technology services company.",
++      detail: "Year of incorporation in Nigeria.",
+     },
+     {
+       label: "Operational Reach",
+@@ -257,22 +255,22 @@
+ export const homeDeliveryModel = {
+   headline: "How we execute.",
+   supporting:
+-    "A disciplined delivery approach — clear enough to govern, practical enough for complex institutional projects.",
++    "We start by understanding the work and the people it affects. Then we bring the right expertise together, deliver against clear milestones and help clients sustain the results.",
+   stages: [
+     {
+-      title: "Plan",
+-      description:
+-        "We define scope, success criteria and constraints; then programme the work, budget and procurement before mobilisation.",
++      title: "Understand",
++      description:
++        "We listen, identify the people and institutions involved, and agree on the priorities, constraints and outcomes that matter.",
+     },
+     {
+       title: "Deliver",
+       description:
+-        "We mobilise, build and implement — technology, infrastructure, events, logistics and field operations — with quality and schedule control.",
+-    },
+-    {
+-      title: "Enable",
+-      description:
+-        "We test, commission and hand over — then provide training, maintenance and operational support beyond completion.",
++        "We bring together the right people and resources, coordinate the work and stay accountable for quality, timelines and communication.",
++    },
++    {
++      title: "Strengthen",
++      description:
++        "We support handover, build the capacity of the teams involved and help put the arrangements in place for results to last.",
+     },
+   ] as const satisfies readonly EditorialPillar[],
+ };
+diff --git a/config/about.ts b/config/about.ts
+--- a/config/about.ts
++++ b/config/about.ts
+@@ -24,40 +24,40 @@
+     emphasis: "That is the whole story.",
+   },
+   paragraphs: [
+-    "PayChex is a Nigerian engineering, construction and technology services company. Since 2008 we have delivered specialist capability across IT & telecommunications, facilities, construction, professional services and institutional engagements — for organisations that cannot afford vague outcomes.",
+-    "Ambition is rarely the problem. Work stalls when ownership is unclear, specialist capacity is missing, or delivery stops at installation.",
+-    "Clients engage us for one service or several. We work with ministries, regulators, development partners and enterprises that need reliable delivery — and accountability that holds until results do.",
++    "PayChex is a Nigerian integrated solutions partner. Since 2008, our work has spanned technology, telecommunications, facilities, construction, professional services and institutional programmes. We bring these capabilities together around the needs of each engagement.",
++    "Good ideas need more than a plan. They need the right expertise, people who understand the context and a team willing to see the work through.",
++    "Some clients come to us for a single service. Others need several teams working together. In both cases, we focus on clear responsibilities, good coordination and work that stands up beyond handover.",
+   ],
+ };
+ 
+ export const aboutApproach = {
+   headline: "How we approach execution.",
+   supporting:
+-    "Four stages on every engagement — practical, sequential and owned.",
++    "A practical way of working, from the first conversation to lasting results.",
+   principles: [
+     {
+       index: "01",
+       title: "Understand",
+       description:
+-        "We begin with operational realities — constraints, stakeholders, systems and field conditions — before proposing a path.",
++        "We listen first. We look at the people, institutions, systems and practical constraints involved before agreeing on an approach.",
+     },
+     {
+       index: "02",
+       title: "Mobilise",
+       description:
+-        "We put the right specialists, resources and field capacity on the work — one capability or several.",
++        "We bring together the right specialists, resources and partners, and make sure everyone understands their role.",
+     },
+     {
+       index: "03",
+       title: "Deliver",
+       description:
+-        "Clear ownership, measurable milestones and disciplined follow-through from mobilisation to handover.",
++        "We manage the work against agreed milestones, keep stakeholders informed and address problems as they arise.",
+     },
+     {
+       index: "04",
+       title: "Strengthen",
+       description:
+-        "Engagements should leave institutions stronger — through training, transfer and lasting operational support.",
++        "We plan for what happens after delivery, including knowledge transfer, operational support and the relationships needed to sustain progress.",
+     },
+   ],
+ };
+@@ -85,7 +85,7 @@
+     {
+       title: "Consulting & Professional Services",
+       description:
+-        "Advisory, procurement, training and managed services that improve execution.",
++        "Advisory, stakeholder engagement, procurement, training and managed services that support better decisions and delivery.",
+     },
+     {
+       title: "Events & Conference Management",
+@@ -104,7 +104,7 @@
+       title: "Government Programmes",
+       icon: "government" as const,
+       description:
+-        "Moving public institutions from policy intent to operational delivery.",
++        "Supporting public institutions with planning, coordination and practical programme delivery.",
+     },
+     {
+       title: "ICT infrastructure",
+@@ -146,7 +146,7 @@
+       title: "Capacity development",
+       icon: "training" as const,
+       description:
+-        "Practical learning that transfers capability to the teams who sustain results.",
++        "Practical learning that helps teams build the skills to sustain their work.",
+     },
+   ],
+ };
+@@ -154,7 +154,7 @@
+ export const aboutThinking = {
+   headline: "How we think about the work.",
+   supporting:
+-    "Operating principles that guide decisions on every engagement.",
++    "The principles that shape how we work with clients, partners and the people affected by a project.",
+   beliefs: [
+     {
+       title: "Execution creates confidence.",
+diff --git a/config/capabilities.ts b/config/capabilities.ts
+--- a/config/capabilities.ts
++++ b/config/capabilities.ts
+@@ -13,7 +13,7 @@
+       emphasis: "Disciplined execution.",
+     },
+     supporting:
+-      "From technology and infrastructure to facilities, professional services and major events — the expertise PayChex brings to complex programme delivery.",
++      "Technology, infrastructure, facilities, professional services and events. Five areas of expertise that can stand alone or work together, depending on what a project needs.",
+     media: {
+       alt: "Multidisciplinary programme execution across engineering, technology and field operations",
+     },
+@@ -24,7 +24,7 @@
+       emphasis: "One integrated partner.",
+     },
+     supporting:
+-      "PayChex brings specialist capabilities together to deliver complex programmes across technology, infrastructure, facilities, professional services and institutional engagements.",
++      "Our work covers five complementary areas. Clients can engage one team for a specific need or bring several together under a coordinated delivery approach.",
+   },
+   cta: {
+     headline: {
+@@ -32,7 +32,7 @@
+       emphasis: "When it matters most.",
+     },
+     supporting:
+-      "One specialist capability or several working together — with one team accountable for delivery.",
++      "Tell us what you need to achieve. We'll help identify the right expertise and a practical way to bring the work together.",
+     example:
+       "For programmes that require technology, facilities, logistics, procurement and stakeholder management, PayChex can bring the right capabilities together under one delivery structure.",
+     primary: {
+@@ -145,7 +145,7 @@
+     id: "consulting-professional",
+     title: "Consulting & Professional Services",
+     introduction:
+-      "Helping organisations improve how they work, make better decisions and execute more effectively.",
++      "Advisory, stakeholder engagement, procurement, training and managed services that help organisations plan, coordinate and deliver.",
+     items: [
+       {
+         title: "Procurement",
+@@ -168,7 +168,7 @@
+       {
+         title: "Stakeholder Engagement & Institutional Coordination",
+         description:
+-          "Strategic stakeholder mapping, consultations, government liaison and engagement programmes that build alignment and support effective project delivery.",
++          "Stakeholder mapping, consultations, government liaison and ongoing coordination to help people and institutions work towards shared programme goals.",
+         href: "/solutions/stakeholder-engagement",
+       },
+     ],
+@@ -201,7 +201,7 @@
+       {
+         title: "Stakeholder Coordination for Events",
+         description:
+-          "Delegate, institutional and partner coordination supporting effective event delivery.",
++          "Coordinating speakers, delegates, hosts and institutional partners before and during an event.",
+         href: "/solutions/events",
+       },
+       {
+@@ -281,7 +281,7 @@
+     title: "Events & Conference Management",
+     headline: "Gatherings that meet institutional standards.",
+     supporting:
+-      "We manage conferences, summits and stakeholder events from concept through logistics, production and on-site delivery.",
++      "We plan and manage conferences, summits and institutional gatherings, coordinating everything from the programme and participants to production and on-site delivery.",
+     problem:
+       "High-stakes institutional events fail when logistics, production and stakeholder management are treated as afterthoughts.",
+     delivery: [
+@@ -301,16 +301,16 @@
+     title: "Stakeholder Engagement & Institutional Coordination",
+     headline: "Building relationships. Enabling collaboration.",
+     supporting:
+-      "We help government institutions, development partners and organisations identify, engage and build productive relationships with the stakeholders critical to their programmes. From stakeholder mapping and consultation to government liaison, strategic communications and multi-party coordination, we create the structures for meaningful participation, institutional alignment and informed decision-making.",
+-    problem:
+-      "Complex programmes can stall when the people and institutions affected by decisions are not identified, consulted or kept aligned. Effective delivery requires more than announcements: it requires structured engagement, clear communication and sustained coordination.",
+-    delivery: [
+-      "Stakeholder identification, mapping and engagement strategy",
+-      "Government liaison, consultations and multi-party dialogue",
+-      "Community awareness, engagement documentation and follow-up",
+-    ],
+-    outcomes:
+-      "Stronger institutional relationships, informed participation and clearer alignment around programme objectives, helping projects move forward with confidence and accountability.",
++      "We help government institutions, development partners and organisations work with the people and groups whose involvement matters to a programme. That can mean identifying stakeholders, organising consultations, supporting government liaison, shaping communications or keeping different parties informed and involved as the work progresses.",
++    problem:
++      "Projects become harder to deliver when the people affected by them are left out of the conversation, or when institutions are working from different expectations. Early consultation and consistent communication help teams understand concerns, resolve issues and make better decisions.",
++    delivery: [
++      "Identify stakeholders and develop a practical engagement plan",
++      "Organise consultations, government liaison and conversations between participating institutions",
++      "Coordinate community awareness, record feedback and follow up on agreed actions",
++    ],
++    outcomes:
++      "Better-informed stakeholders, clearer expectations and stronger working relationships throughout a programme.",
+     media: {
+       src: assets.images.home.catalogue.training,
+       alt: "Professional consultation and stakeholder engagement",
+diff --git a/app/about/page.tsx b/app/about/page.tsx
+--- a/app/about/page.tsx
++++ b/app/about/page.tsx
+@@ -11,7 +11,7 @@
+ export const metadata: Metadata = {
+   title: "About",
+   description:
+-    "Why organisations trust PayChex with important work — specialist capability, disciplined delivery and clear accountability since 2008.",
++    "Meet PayChex, a Nigerian integrated solutions partner bringing together specialist teams to deliver technology, facilities, construction and institutional programmes.",
+ };
+ 
+ export default function AboutPage() {
+diff --git a/app/solutions/[slug]/page.tsx b/app/solutions/[slug]/page.tsx
+--- a/app/solutions/[slug]/page.tsx
++++ b/app/solutions/[slug]/page.tsx
+@@ -42,9 +42,17 @@
+   const capability = getCapabilityBySlug(slug);
+   if (!capability) notFound();
+ 
+-  const related = capabilityPages
+-    .filter((page) => page.slug !== capability.slug)
+-    .slice(0, 3);
++  const relatedSlugs: Record<string, readonly string[]> = {
++    "stakeholder-engagement": ["events", "training", "bpo"],
++    events: ["stakeholder-engagement", "logistics", "training"],
++    training: ["stakeholder-engagement", "bpo", "events"],
++    bpo: ["training", "stakeholder-engagement", "technology"],
++  };
++  const preferred = relatedSlugs[capability.slug] ?? [];
++  const related = [
++    ...preferred.map((slug) => getCapabilityBySlug(slug)).filter((page) => page !== undefined),
++    ...capabilityPages.filter((page) => page.slug !== capability.slug && !preferred.includes(page.slug)),
++  ].filter((page) => page.slug !== capability.slug).slice(0, 3);
+ 
+   return (
+     <>

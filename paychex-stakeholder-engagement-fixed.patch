@@ -1,0 +1,50 @@
+diff --git a/config/capabilities.ts b/config/capabilities.ts
+--- a/config/capabilities.ts
++++ b/config/capabilities.ts
+@@ -147,4 +147,10 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
+         description:
+           "Contact centres, data capture and back-office capacity to institutional standards.",
+         href: "/solutions/bpo",
+       },
++      {
++        title: "Stakeholder Engagement & Institutional Coordination",
++        description:
++          "Strategic stakeholder mapping, consultations, government liaison and engagement programmes that build alignment and support effective project delivery.",
++        href: "/solutions/stakeholder-engagement",
++      },
+@@ -176,7 +182,7 @@ export const capabilityFamilies: readonly CapabilityFamily[] = [
+       },
+       {
+-        title: "Stakeholder Coordination",
++        title: "Stakeholder Coordination for Events",
+         description:
+-          "Stakeholder engagement planned and managed alongside event delivery.",
++          "Delegate, institutional and partner coordination supporting effective event delivery.",
+         href: "/solutions/events",
+       },
+@@ -260,5 +266,25 @@ export const capabilityPages = [
+       alt: "Conference and institutional event delivery",
+     },
+   },
++  {
++    slug: "stakeholder-engagement",
++    title: "Stakeholder Engagement & Institutional Coordination",
++    headline: "Building relationships. Enabling collaboration.",
++    supporting:
++      "We help government institutions, development partners and organisations identify, engage and build productive relationships with the stakeholders critical to their programmes. From stakeholder mapping and consultation to government liaison, strategic communications and multi-party coordination, we create the structures for meaningful participation, institutional alignment and informed decision-making.",
++    problem:
++      "Complex programmes can stall when the people and institutions affected by decisions are not identified, consulted or kept aligned. Effective delivery requires more than announcements: it requires structured engagement, clear communication and sustained coordination.",
++    delivery: [
++      "Stakeholder identification, mapping and engagement strategy",
++      "Government liaison, consultations and multi-party dialogue",
++      "Community awareness, engagement documentation and follow-up",
++    ],
++    outcomes:
++      "Stronger institutional relationships, informed participation and clearer alignment around programme objectives, helping projects move forward with confidence and accountability.",
++    media: {
++      src: assets.images.home.catalogue.training,
++      alt: "Professional consultation and stakeholder engagement",
++    },
++  },
+   {
+     slug: "training",
