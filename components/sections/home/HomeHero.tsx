@@ -1,3 +1,4 @@
+import { RippleHero } from "@/components/sections/home/RippleHero";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { homeHero } from "@/config/home";
