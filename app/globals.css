@@ -115,3 +115,60 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* Homepage-only dark header, returning to normal chrome on scroll. */
+.site-logo-inverse { display: none; }
+header[data-home-dark="true"] .site-logo-normal { display: none; }
+header[data-home-dark="true"] .site-logo-inverse { display: block; }
+header[data-home-dark="true"] nav a { color: #eeeae4; }
+header[data-home-dark="true"] nav a:hover { color: #fff; }
+header[data-home-dark="true"] nav a::after { background-color: #edc63a; }
+header[data-home-dark="true"] nav a:focus-visible { outline-color: #fff; }
+header[data-home-dark="true"] a[href="/contact"]:not(nav a) { border: 1px solid #edc63a; background: transparent; color: #fff; }
+header[data-home-dark="true"] a[href="/contact"]:not(nav a):hover { background: #edc63a; color: #171717; }
+@media (max-width: 767px) { .brand-canvas-art { mask-image: linear-gradient(to bottom, transparent, black 20%); } }
+
+
+/* Brand Canvas header surface correction — homepage top only */
+header[data-home-dark="true"] {
+  background-color: #171717;
+  color: #ffffff;
+  border-bottom-color: rgba(255,255,255,.08);
+}
+header[data-home-dark="true"] nav a[aria-current="page"] {
+  color: #ffffff;
+}
+header[data-home-dark="true"] nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+header[data-home-dark="true"] nav a:focus-visible,
+header[data-home-dark="true"] a:focus-visible {
+  outline-color: #f0ca38;
+}
+
+
+/* PayChex Brand Canvas refinement v2 */
+header[data-home-dark="true"] {
+  background: #171717 !important;
+  color: #ffffff;
+  border-bottom-color: rgba(255,255,255,.08);
+}
+header[data-home-dark="true"] nav a { color: #eeeae4; }
+header[data-home-dark="true"] nav a[aria-current="page"] { color: #fff; }
+header[data-home-dark="true"] nav a::after { background-color: #f0ca38; }
+header[data-home-dark="true"] .site-logo-inverse { display: block; }
+header[data-home-dark="true"] .site-logo-normal { display: none; }
+header:not([data-home-dark="true"]) .site-logo-inverse { display: none; }
+header:not([data-home-dark="true"]) .site-logo-normal { display: block; }
+header[data-home-dark="true"] a:focus-visible { outline-color: #f0ca38; }
+
+
+/* Brand Canvas mobile refinement v3 */
+header[data-home-page="true"]:not([data-home-dark="true"]) .site-logo-normal { display: none; }
+header[data-home-page="true"]:not([data-home-dark="true"]) .site-home-wordmark { display: inline-flex; }
+header[data-home-dark="true"] .site-home-wordmark { display: none; }
+@media (max-width: 767px) {
+  .brand-canvas-art { mask-image: linear-gradient(to bottom, transparent, black 32%); }
+  header[data-home-page="true"] .site-logo-inverse { line-height: 1; }
+  header[data-home-page="true"] .site-logo-inverse a { font-size: 1.65rem; }
+}
